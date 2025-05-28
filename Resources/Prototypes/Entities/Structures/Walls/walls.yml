@@ -707,17 +707,6 @@
     cost: 6 #Frontier
     delay: 8 #Frontier
     fx: EffectRCDDeconstruct8 #Frontier
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - WallLayer
-        density: 2000
 
 - type: entity
   parent: WallReinforced
@@ -956,7 +945,6 @@
     bodyType: Static
 #  - type: Reflect # Frontier
 #    reflectProb: 1 # Frontier
-  - type: Pullable
   - type: Destructible
     thresholds:
     - trigger:
@@ -1065,19 +1053,6 @@
     cost: 6 #Frontier
     delay: 8 #Frontier
     fx: EffectRCDDeconstruct8 #Frontier
-#  - type: Reflect # Frontier
-#    reflectProb: 1 # Frontier
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - WallLayer
-        density: 2000
 
 - type: entity
   parent: BaseWall

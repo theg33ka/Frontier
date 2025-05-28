@@ -97,7 +97,6 @@
     - AllowGhostShownByEvent
 
 - type: entity
-  parent: BaseMentalAction
   id: ActionGhostBoo
   name: Boo!
   description: Scare your crew members because of boredom!
@@ -111,7 +110,6 @@
     event: !type:BooActionEvent
 
 - type: entity
-  parent: BaseMentalAction
   id: ActionToggleLighting
   name: Toggle Lighting
   description: Toggle light rendering to better observe dark areas.
@@ -119,6 +117,7 @@
   - type: Action
     icon: Interface/VerbIcons/light.svg.192dpi.png
     clientExclusive: true
+    checkCanInteract: false
   - type: InstantAction
     event: !type:ToggleLightingActionEvent
 
@@ -132,7 +131,6 @@
 # End Frontier
 
 - type: entity
-  parent: BaseMentalAction
   id: ActionToggleFov
   name: Toggle FoV
   description: Toggles field-of-view in order to see what players see.
@@ -140,11 +138,11 @@
   - type: Action
     icon: Interface/VerbIcons/vv.svg.192dpi.png
     clientExclusive: true
+    checkCanInteract: false
   - type: InstantAction
     event: !type:ToggleFoVActionEvent
 
 - type: entity
-  parent: BaseMentalAction
   id: ActionToggleGhosts
   name: Toggle Ghosts
   description: Toggle the visibility of other ghosts.
@@ -152,16 +150,17 @@
   - type: Action
     icon: { sprite: Mobs/Ghosts/ghost_human.rsi, state: icon }
     clientExclusive: true
+    checkCanInteract: false
   - type: InstantAction
     event: !type:ToggleGhostsActionEvent
 
 - type: entity
-  parent: BaseMentalAction
   id: ActionToggleGhostHearing
   name: Toggle Ghost Hearing
   description: Toggle between hearing all messages and hearing only radio & nearby messages.
   components:
   - type: Action
+    checkCanInteract: false
     icon:
       sprite: Clothing/Ears/Headsets/base.rsi
       state: icon

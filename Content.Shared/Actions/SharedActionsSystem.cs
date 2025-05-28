@@ -24,14 +24,14 @@ public abstract class SharedActionsSystem : EntitySystem
 {
     [Dependency] private readonly INetManager _net = default!; // Goobstation
     [Dependency] protected readonly IGameTiming GameTiming = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly RotateToFaceSystem _rotateToFace = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private   readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private   readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private   readonly ActionContainerSystem _actionContainer = default!;
+    [Dependency] private   readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private   readonly RotateToFaceSystem _rotateToFace = default!;
+    [Dependency] private   readonly SharedAudioSystem _audio = default!;
+    [Dependency] private   readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private   readonly SharedTransformSystem _transform = default!;
 
     private EntityQuery<ActionComponent> _actionQuery;
     private EntityQuery<ActionsComponent> _actionsQuery;
@@ -60,7 +60,6 @@ public abstract class SharedActionsSystem : EntitySystem
         SubscribeLocalEvent<ActionsComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ActionsComponent, ComponentGetState>(OnGetState);
 
-        SubscribeLocalEvent<ActionComponent, ActionValidateEvent>(OnValidate);
         SubscribeLocalEvent<InstantActionComponent, ActionValidateEvent>(OnInstantValidate);
         SubscribeLocalEvent<EntityTargetActionComponent, ActionValidateEvent>(OnEntityValidate);
         SubscribeLocalEvent<WorldTargetActionComponent, ActionValidateEvent>(OnWorldValidate);
@@ -110,7 +109,7 @@ public abstract class SharedActionsSystem : EntitySystem
     /// </summary>
     public Entity<ActionComponent>? GetAction(Entity<ActionComponent?>? action, bool logError = true)
     {
-        if (action is not {} ent || Deleted(ent))
+        if (action is not {} ent || TerminatingOrDeleted(ent))
             return null;
 
         if (!_actionQuery.Resolve(ent, ref ent.Comp, logError))
@@ -319,9 +318,19 @@ public abstract class SharedActionsSystem : EntitySystem
 
     private void OnValidate(Entity<ActionComponent> ent, ref ActionValidateEvent args)
     {
-        if ((ent.Comp.CheckConsciousness && !_actionBlocker.CanConsciouslyPerformAction(args.User))
-            || (ent.Comp.CheckCanInteract && !_actionBlocker.CanInteract(args.User, null)))
+        if (ent.Comp.CheckConsciousness && !_actionBlocker.CanConsciouslyPerformAction(args.User))
+        {
             args.Invalid = true;
+            return;
+        }
+
+        if (ent.Comp.CheckCanInteract && !_actionBlocker.CanInteract(args.User, null))
+        {
+            args.Invalid = true;
+            return;
+        }
+
+        // Event is not set here, only below
     }
 
     private void OnInstantValidate(Entity<InstantActionComponent> ent, ref ActionValidateEvent args)
@@ -350,9 +359,7 @@ public abstract class SharedActionsSystem : EntitySystem
         var target = GetEntity(netTarget);
 
         var targetWorldPos = _transform.GetWorldPosition(target);
-
-        if (ent.Comp.RotateOnUse)
-            _rotateToFace.TryFaceCoordinates(user, targetWorldPos);
+        _rotateToFace.TryFaceCoordinates(user, targetWorldPos);
 
         if (!ValidateEntityTarget(user, target, ent))
             return;
@@ -373,9 +380,7 @@ public abstract class SharedActionsSystem : EntitySystem
 
         var user = args.User;
         var target = GetCoordinates(netTarget);
-
-        if (ent.Comp.RotateOnUse)
-            _rotateToFace.TryFaceCoordinates(user, _transform.ToMapCoordinates(target).Position);
+        _rotateToFace.TryFaceCoordinates(user, target.ToMapPos(EntityManager, _transform));
 
         if (!ValidateWorldTarget(user, target, ent))
             return;
@@ -419,13 +424,15 @@ public abstract class SharedActionsSystem : EntitySystem
             return comp.CanTargetSelf;
 
         var targetAction = Comp<TargetActionComponent>(uid);
-        // not using the ValidateBaseTarget logic since its raycast fails if the target is e.g. a wall
-        if (targetAction.CheckCanAccess)
-            return _interaction.InRangeAndAccessible(user, target, range: targetAction.Range);
+        var coords = Transform(target).Coordinates;
+        if (!ValidateBaseTarget(user, coords, (uid, targetAction)))
+        {
+            // if not just checking pure range, let stored entities be targeted by actions
+            // if it's out of range it probably isn't stored anyway...
+            return targetAction.CheckCanAccess && _interaction.CanAccessViaStorage(user, target);
+        }
 
-        // if not just checking pure range, let stored entities be targeted by actions
-        // if it's out of range it probably isn't stored anyway...
-        return _interaction.CanAccessViaStorage(user, target);
+        return _interaction.InRangeAndAccessible(user, target, range: targetAction.Range);
     }
 
     public bool ValidateWorldTarget(EntityUid user, EntityCoordinates target, Entity<WorldTargetActionComponent> ent)
@@ -436,7 +443,7 @@ public abstract class SharedActionsSystem : EntitySystem
 
     private bool ValidateBaseTarget(EntityUid user, EntityCoordinates coords, Entity<TargetActionComponent> ent)
     {
-        var comp = ent.Comp;
+        var (uid, comp) = ent;
         if (comp.CheckCanAccess)
             return _interaction.InRangeUnobstructed(user, coords, range: comp.Range);
 

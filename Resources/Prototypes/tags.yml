@@ -1518,3 +1518,10 @@
 
 - type: Tag
   id: BoomBoxTape
+
+# Forge-Change
+- type: Tag
+  id: CapacitorStockPart
+
+- type: Tag
+  id: MicroManipulatorStockPart

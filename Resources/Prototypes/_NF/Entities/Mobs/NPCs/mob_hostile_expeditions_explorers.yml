@@ -629,9 +629,8 @@
   - type: TargetAction
     checkCanAccess: false
     range: 0
-    itemIconStyle: BigAction
-  - type: UseDelay
-    delay: 50
+  - type: WorldTargetAction
+    event: !type:ActionGunShootEvent
 
 #region space, t1
 - type: entity

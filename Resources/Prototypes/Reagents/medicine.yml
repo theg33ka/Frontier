@@ -835,7 +835,7 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:EvenHealthChange
+      - !type:HealthChange
         damage:
           groups:
             Burn: -3 # Corvax-Frontier

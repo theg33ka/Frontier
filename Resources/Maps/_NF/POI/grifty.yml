@@ -6092,15 +6092,6 @@ entities:
     - type: Transform
       pos: 1.5,2.5
       parent: 1
-- proto: NFWeaponRevolverDeckardExpeditionGrifty
-  entities:
-  - uid: 219
-    components:
-    - type: Transform
-      parent: 563
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: Window
   entities:
   - uid: 896
