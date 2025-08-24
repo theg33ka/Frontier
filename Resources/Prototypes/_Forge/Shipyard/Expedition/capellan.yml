@@ -13,7 +13,7 @@
 - type: vessel
   id: Capellan
   parent: BaseVessel
-  name: NT Капеллан
+  name: GS Капеллан
   description: Крупногабаритный исследовательский шаттл. Рекомендованный размер команды 3-6 человек.
   price: 200000
   category: Large
@@ -22,7 +22,7 @@
 
 - type: gameMap
   id: Capellan
-  mapName: 'NT Капеллан'
+  mapName: 'GS Капеллан'
   mapPath: /Maps/Forge/Shuttles/Expedition/capellan.yml
   minPlayers: 0
   stations:
@@ -30,7 +30,7 @@
       stationProto: StandardFrontierExpeditionVessel
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'NT Капеллан {1}'
+        mapNameTemplate: 'GS Капеллан {1}'
         nameGenerator: !type:NanotrasenNameGenerator
           prefixCreator: '14'
       - type: StationJobs
