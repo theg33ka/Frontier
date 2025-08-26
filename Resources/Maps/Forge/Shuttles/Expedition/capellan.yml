@@ -4,8 +4,8 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/24/2025 15:20:28
-  entityCount: 2063
+  time: 08/26/2025 01:54:07
+  entityCount: 2067
 maps: []
 grids:
 - 1
@@ -5915,7 +5915,7 @@ entities:
       pos: 3.5,23.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -6656.9204
+      secondsUntilStateChange: -7065.478
       state: Opening
 - proto: DefibrillatorCabinetFilled
   entities:
@@ -6053,6 +6053,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -5.5,8.5
       parent: 1
+  - uid: 862
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,24.5
+      parent: 1
 - proto: DisposalJunction
   entities:
   - uid: 794
@@ -6069,7 +6075,7 @@ entities:
   - uid: 796
     components:
     - type: Transform
-      pos: 0.5,23.5
+      pos: 0.5,24.5
       parent: 1
   - uid: 797
     components:
@@ -6417,14 +6423,13 @@ entities:
   - uid: 857
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,23.5
+      rot: -1.5707963267948966 rad
+      pos: -1.5,24.5
       parent: 1
   - uid: 858
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,23.5
+      pos: 0.5,23.5
       parent: 1
   - uid: 859
     components:
@@ -6440,11 +6445,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,22.5
-      parent: 1
-  - uid: 862
-    components:
-    - type: Transform
-      pos: 0.5,24.5
       parent: 1
   - uid: 863
     components:
@@ -6541,6 +6541,12 @@ entities:
     - type: Transform
       pos: -2.5,15.5
       parent: 1
+  - uid: 2064
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,24.5
+      parent: 1
 - proto: DisposalTrunk
   entities:
   - uid: 880
@@ -6564,7 +6570,7 @@ entities:
   - uid: 883
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: -2.5,23.5
       parent: 1
   - uid: 884
@@ -11939,6 +11945,27 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.5,7.5
       parent: 1
+- proto: SpawnPointContractor
+  entities:
+  - uid: 2066
+    components:
+    - type: Transform
+      pos: -3.5,7.5
+      parent: 1
+- proto: SpawnPointMercenary
+  entities:
+  - uid: 2065
+    components:
+    - type: Transform
+      pos: -3.5,8.5
+      parent: 1
+- proto: SpawnPointPilot
+  entities:
+  - uid: 2067
+    components:
+    - type: Transform
+      pos: -3.5,6.5
+      parent: 1
 - proto: StationMap
   entities:
   - uid: 1641
@@ -14425,31 +14452,31 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-  - uid: 2062
+  - uid: 2052
     components:
     - type: Transform
       pos: -5.5,6.5
       parent: 1
-  - uid: 2063
+  - uid: 2053
     components:
     - type: Transform
       pos: -2.5,31.5
       parent: 1
 - proto: WindoorSecure
   entities:
-  - uid: 2052
+  - uid: 2054
     components:
     - type: Transform
       pos: -2.5,-3.5
       parent: 1
-  - uid: 2053
+  - uid: 2055
     components:
     - type: Transform
       pos: -3.5,-3.5
       parent: 1
 - proto: WindowDirectional
   entities:
-  - uid: 2054
+  - uid: 2056
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -14457,43 +14484,43 @@ entities:
       parent: 1
 - proto: WindowReinforcedDirectional
   entities:
-  - uid: 2055
+  - uid: 2057
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 8.5,3.5
       parent: 1
-  - uid: 2056
+  - uid: 2058
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 8.5,5.5
       parent: 1
-  - uid: 2057
+  - uid: 2059
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 8.5,4.5
       parent: 1
-  - uid: 2058
+  - uid: 2060
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,31.5
       parent: 1
-  - uid: 2059
+  - uid: 2061
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -4.5,31.5
       parent: 1
-  - uid: 2060
+  - uid: 2062
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -4.5,32.5
       parent: 1
-  - uid: 2061
+  - uid: 2063
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
