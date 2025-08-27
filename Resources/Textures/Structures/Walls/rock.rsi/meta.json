@@ -216,9 +216,6 @@
             "name": "rock_andesite_west"
         },
         {
-            "name": "rock_magmite"
-		},
-        {
             "name": "gibtonite_active",
             "delays": [
                 [

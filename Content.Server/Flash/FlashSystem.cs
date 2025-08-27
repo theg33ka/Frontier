@@ -22,7 +22,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Random;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
 using Robust.Shared.Prototypes;
-using Content.Shared._Goobstation.Flashbang; // Goob Change
 
 namespace Content.Server.Flash
 {

@@ -8,6 +8,7 @@ namespace Content.Client.DisplacementMap;
 public sealed class DisplacementMapSystem : EntitySystem
 {
     [Dependency] private readonly ISerializationManager _serialization = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     /// <summary>
     /// Attempting to apply a displacement map to a specific layer of SpriteComponent
@@ -55,7 +56,7 @@ public sealed class DisplacementMapSystem : EntitySystem
         // We choose a displacement map from the possible ones, matching the size with the original layer size.
         // If there is no such a map, we use a standard 32 by 32 one
         var displacementDataLayer = data.SizeMaps[EyeManager.PixelsPerMeter];
-        var actualRSI = sprite.LayerGetActualRSI(index);
+        var actualRSI = _sprite.LayerGetEffectiveRsi(sprite.AsNullable(), index);
         if (actualRSI is not null)
         {
             if (actualRSI.Size.X != actualRSI.Size.Y)
@@ -76,5 +77,16 @@ public sealed class DisplacementMapSystem : EntitySystem
         sprite.LayerMapSet(displacementKey, index);
 
         return true;
+    }
+
+    /// <inheritdoc cref="TryAddDisplacement"/>
+    [Obsolete("Use the Entity<SpriteComponent> overload")]
+    public bool TryAddDisplacement(DisplacementData data,
+        SpriteComponent sprite,
+        int index,
+        object key,
+        out string displacementKey)
+    {
+        return TryAddDisplacement(data, (sprite.Owner, sprite), index, key, out displacementKey);
     }
 }

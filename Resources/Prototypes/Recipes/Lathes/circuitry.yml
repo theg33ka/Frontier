@@ -112,7 +112,7 @@
 
 # Mechs
 - type: latheRecipe
-  parent: [ BaseGoldCircuitboardRecipe, BaseRipleyRecipeCategory ]
+  parent: [ BaseGoldCircuitboardRecipe, BaseMechRecipeCategory ]
   id: RipleyCentralElectronics
   result: RipleyCentralElectronics
 
@@ -122,7 +122,7 @@
   result: RipleyPeripheralsElectronics
 
 - type: latheRecipe
-  parent: [ BaseBananiumCircuitboardRecipe, BaseHonkerRecipeCategory ]
+  parent: [ BaseBananiumCircuitboardRecipe, BaseMechRecipeCategory ]
   id: HonkerCentralElectronics
   result: HonkerCentralElectronics
 
@@ -137,7 +137,7 @@
   result: HonkerTargetingElectronics
 
 - type: latheRecipe
-  parent: [ BaseGoldCircuitboardRecipe, BaseSmallMechRecipeCategory]
+  parent: [ BaseGoldCircuitboardRecipe, BaseMechRecipeCategory]
   id: HamtrCentralElectronics
   result: HamtrCentralElectronics
 

@@ -3,7 +3,7 @@ using Content.Shared.StatusEffectNew;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
-using Robust.Shared.Random; 
+using Robust.Shared.Random;
 
 namespace Content.Client.Drugs;
 
@@ -15,7 +15,7 @@ public sealed class DrugOverlaySystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly IRobustRandom _random = default!; 
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private RainbowOverlay _overlay = default!;
 
@@ -44,9 +44,11 @@ public sealed class DrugOverlaySystem : EntitySystem
 
     private void OnApplied(Entity<SeeingRainbowsStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        if (_player.LocalEntity != args.Target)
-            return;
-        _overlayMan.AddOverlay(_overlay);
+        if (_player.LocalEntity == args.Target)
+        {
+            _overlay.Phase = _random.NextFloat(MathF.Tau); // random starting phase for movement effect
+            _overlayMan.AddOverlay(_overlay);
+        }
     }
 
     private void OnPlayerAttached(Entity<SeeingRainbowsStatusEffectComponent> ent, ref StatusEffectRelayedEvent<LocalPlayerAttachedEvent> args)

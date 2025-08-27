@@ -25,16 +25,24 @@ public sealed class ChargesSystem : SharedChargesSystem
 
         while (query.MoveNext(out var uid, out var recharge, out var charges))
         {
+<<<<<<< HEAD
             BaseActionComponent? actionComp = null;
 
             if (!_actions.ResolveActionData(uid, ref actionComp, logError: false))
+=======
+            if (_actions.GetAction(uid, false) is not {} action)
+>>>>>>> upstream/master
                 continue;
 
             var current = GetCurrentCharges((uid, charges, recharge));
 
             if (!_lastCharges.TryGetValue(uid, out var last) || current != last)
             {
+<<<<<<< HEAD
                 _actions.UpdateAction(uid, actionComp);
+=======
+                _actions.UpdateAction(action);
+>>>>>>> upstream/master
             }
 
             _tempLastCharges[uid] = current;

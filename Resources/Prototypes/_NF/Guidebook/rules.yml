@@ -30,18 +30,21 @@
   name: guide-entry-frontier-rule-zero-tolerance
   text: "/ServerInfo/_Forge/Rules/0_Admin.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/Zero_Tolerance.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule1
   name: guide-entry-frontier-rule-1
   text: "/ServerInfo/_Forge/Rules/1_Griffing.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/1_Community.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule2
   name: guide-entry-frontier-rule-2
   text: "/ServerInfo/_Forge/Rules/2_Murder.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/2_ICInfo.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule2_1
@@ -54,6 +57,7 @@
   name: guide-entry-frontier-rule-3
   text: "/ServerInfo/_Forge/Rules/3_ViolationGA.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/3_Escalation.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule3_1
@@ -96,6 +100,7 @@
   name: guide-entry-frontier-rule-4
   text: "/ServerInfo/_Forge/Rules/4_CharacterLogic.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/4_Chat.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule4_1
@@ -108,6 +113,7 @@
   name: guide-entry-frontier-rule-5
   text: "/ServerInfo/_Forge/Rules/5_AntagsPlay.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/5_Roleplay.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule5_1
@@ -120,21 +126,25 @@
   name: guide-entry-frontier-rule-6
   text: "/ServerInfo/_Forge/Rules/6_SectorZones.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/6_Safezone.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule7
   name: guide-entry-frontier-rule-7
   text: "/ServerInfo/_Forge/Rules/7_ERP.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/7_Antag.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule8
   name: guide-entry-frontier-rule-8
   text: "/ServerInfo/_Forge/Rules/8_Cheating.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/8_PVP.xml"
 
 - type: guideEntry
   id: CorvaxFrontierRule9
   name: guide-entry-frontier-rule-9
   text: "/ServerInfo/_Forge/Rules/9_Maraud.xml"
   ruleEntry: true
+  text: "/ServerInfo/_NF/Guidebook/Rules/13_Command.xml"

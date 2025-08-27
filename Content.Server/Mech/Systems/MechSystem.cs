@@ -183,7 +183,7 @@ public sealed partial class MechSystem : SharedMechSystem
         args.Handled = true;
 
         mechThrusters.ThrustersEnabled = !mechThrusters.ThrustersEnabled;
-        
+
         _actions.SetToggled(component.MechToggleThrustersActionEntity, mechThrusters.ThrustersEnabled);
 
         if (mechThrusters.ThrustersEnabled)
@@ -205,8 +205,8 @@ public sealed partial class MechSystem : SharedMechSystem
         if (args.Handled)
             return;
 
-        if (component.BatterySlot.ContainedEntity == null 
-            || !TryComp<BatteryComponent>(component.BatterySlot.ContainedEntity, out var battery) 
+        if (component.BatterySlot.ContainedEntity == null
+            || !TryComp<BatteryComponent>(component.BatterySlot.ContainedEntity, out var battery)
             || battery.CurrentCharge <= 0)
             return;
 
@@ -228,14 +228,14 @@ public sealed partial class MechSystem : SharedMechSystem
 
         Dirty(uid, component);
     }
-    
+
     private void OnBatteryChargeChanged(EntityUid uid, MechBatteryComponent component, ref ChargeChangedEvent args)
     {
         if (!TryComp<MechComponent>(component.Mech, out var mechComp))
             return;
-        
+
         var mech = component.Mech;
-        
+
         if (args.Charge == 0 && mechComp.Light)
             ToggleLight(mech, mechComp);
 
@@ -638,7 +638,7 @@ public sealed partial class MechSystem : SharedMechSystem
 
         if (!Resolve(toInsert, ref gasTank, false))
             return;
-        
+
         _container.Insert(toInsert, component.GasTankSlot);
         UpdateCanMove(uid, component);
         Dirty(uid, component);
@@ -669,7 +669,7 @@ public sealed partial class MechSystem : SharedMechSystem
     {
         if (!Resolve(uid, ref component) || component.BatterySlot.ContainedEntity == null ) // Forge-Change
             return;
-        
+
         RemComp<MechBatteryComponent>(component.BatterySlot.ContainedEntity.Value); // Forge-Change
 
         _container.EmptyContainer(component.BatterySlot);
@@ -730,7 +730,7 @@ public sealed partial class MechSystem : SharedMechSystem
     {
         if (!TryComp<MechComponent>(uid, out var mech) || !mech.Airtight || mech.GasTankSlot.ContainedEntity == null || !mech.Internals)
             return;
-        
+
         var gasTank = Comp<GasTankComponent>(mech.GasTankSlot.ContainedEntity.Value);
         _atmosphere.PumpGasTo(gasTank.Air, comp.Air, 70);
     }

@@ -154,7 +154,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: SprayPainter
-  result: SprayPainterEmpty # Upstream#37341 SprayPainter<SprayPainterEmpty
+  result: SprayPainterEmpty
   materials:
     Steel: 300
     Plastic: 100
@@ -168,6 +168,14 @@
     Steel: 150
     Plastic: 50
 # End Upstream#37341
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: SprayPainterAmmo
+  result: SprayPainterAmmo
+  materials:
+    Steel: 150
+    Plastic: 50
 
 - type: latheRecipe
   parent: BaseToolRecipe
