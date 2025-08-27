@@ -58,13 +58,6 @@
     reoccurrenceDelay: 45
     startAnnouncement: station-event-solar-flare-nf-start-announcement
     endAnnouncement: station-event-solar-flare-nf-end-announcement
-    startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_solar_flare_start.ogg
-    weight: 4
-    earliestStart: 15
-    reoccurrenceDelay: 45
-    startAnnouncement: station-event-solar-flare-nf-start-announcement
-    endAnnouncement: station-event-solar-flare-nf-end-announcement
     endAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_solar_flare_end.ogg
     duration: 120

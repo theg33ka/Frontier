@@ -325,7 +325,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             }
         }
 
-        if (component.DeleteOnRemove && _net.IsServer)
+        if (component.DeleteOnRemove && _netManager.IsServer)
         {
             QueueDel(uid);
             return;

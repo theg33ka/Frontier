@@ -7,6 +7,7 @@
   categories:
   - Circuitry
 
+
 - type: latheRecipe
   abstract: true
   id: BaseClarkeRecipeCategory
@@ -39,9 +40,9 @@
 
 - type: latheRecipe
   abstract: true
-  id: BaseSmallMechRecipeCategory
+  id: BaseMechRecipeCategory
   categories:
-  - SmallMech
+  - Mech
 
 ## Recipes
 

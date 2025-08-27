@@ -546,27 +546,6 @@
               acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallDiagonalBase
-  id: WallPlastitaniumDiagonalIndestructible
-  name: plastitanium wall
-  suffix: diagonal, indestructible
-  description: Skub knows this wall is too hard to destroy. # Frontier
-  components:
-  - type: Sprite
-    drawdepth: Walls
-    sprite: Structures/Walls/plastitanium_diagonal.rsi
-    color: "#cdf3cd" # Frontier
-    state: state0
-  - type: Icon
-    sprite: Structures/Walls/plastitanium_diagonal.rsi
-    state: state0
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
-  - type: RadiationBlocker
-    resistance: 5
-
-- type: entity
   parent: WallPlastitaniumDiagonalIndestructible
   id: WallPlastitaniumDiagonal
   name: plastitanium wall
@@ -599,6 +578,11 @@
             collection: MetalSlam
   - type: RCDDeconstructable # Frontier
     deconstructable: false # Frontier
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: RadiationBlocker
+    resistance: 5
 
 - type: entity
   id: WallPlastitaniumDiagonalIndestructible

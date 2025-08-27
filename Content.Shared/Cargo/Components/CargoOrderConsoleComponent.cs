@@ -93,12 +93,6 @@ public sealed partial class CargoOrderConsoleComponent : Component
     public HashSet<ProtoId<AccessLevelPrototype>> RemoveLimitAccess = new();
 
     /// <summary>
-    /// Access needed to toggle the limit on this console.
-    /// </summary>
-    [DataField]
-    public HashSet<ProtoId<AccessLevelPrototype>> RemoveLimitAccess = new();
-
-    /// <summary>
     /// Radio channel on which order approval announcements are transmitted
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]

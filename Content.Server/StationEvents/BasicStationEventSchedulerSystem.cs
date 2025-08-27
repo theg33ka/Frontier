@@ -158,8 +158,6 @@ namespace Content.Server.StationEvents
 
             var eventScheduler = _protoMan.Index(eventSchedulerProto);
 
-            eventSchedulerProto.Deconstruct(out EntityPrototype eventScheduler);
-
             if (!eventScheduler.TryGetComponent<BasicStationEventSchedulerComponent>(out var basicScheduler, _compFac))
                 yield break;
 
@@ -183,8 +181,6 @@ namespace Content.Server.StationEvents
             _protoMan ??= IoCManager.Resolve<IPrototypeManager>();
 
             var eventScheduler = _protoMan.Index(eventSchedulerProto);
-
-            eventSchedulerProto.Deconstruct(out EntityPrototype eventScheduler);
 
             if (!eventScheduler.TryGetComponent<BasicStationEventSchedulerComponent>(out var basicScheduler, _compFac))
                 yield break;
@@ -213,8 +209,6 @@ namespace Content.Server.StationEvents
             _protoMan ??= IoCManager.Resolve<IPrototypeManager>();
 
             var eventScheduler = _protoMan.Index(eventSchedulerProto);
-
-            eventSchedulerProto.Deconstruct(out EntityPrototype eventScheduler);
 
             if (!eventScheduler.TryGetComponent<BasicStationEventSchedulerComponent>(out var basicScheduler, _compFac))
                 return 0f;

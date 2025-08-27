@@ -100,18 +100,6 @@
 
 - type: entity
   parent: PosterBase
-  id: ShuttleMapCaladrius
-  name: "FSB Caladrius"
-  description: "Detailed map of a Caladrius shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: caladrius
-    scale: 1.2, 1.2
-
-- type: entity
-  parent: PosterBase
   id: ShuttleMapCeres
   name: "BB Ceres"
   description: "Detailed map of a Ceres shuttle."
@@ -200,42 +188,6 @@
 
 - type: entity
   parent: PosterBase
-  id: ShuttleMapCopperhead
-  name: "LVHI Copperhead"
-  description: "Detailed map of a Copperhead shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: copperhead
-    scale: 1.2, 1.2
-
-- type: entity
-  parent: PosterBase
-  id: ShuttleMapCourier
-  name: "FSB Courier"
-  description: "Detailed map of a Courier shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: courier
-    scale: 1.2, 1.2
-
-- type: entity
-  parent: PosterBase
-  id: ShuttleMapDruid
-  name: "FSB Druid"
-  description: "Detailed map of a Druid shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: druid
-    scale: 1.2, 1.2
-
-- type: entity
-  parent: PosterBase
   id: ShuttleMapEagle
   name: "NM Eagle"
   description: "Detailed map of an Eagle shuttle."
@@ -321,18 +273,6 @@
   - type: Sprite
     sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
     state: izakaya
-
-- type: entity
-  parent: PosterBase
-  id: ShuttleMapIzakaya
-  name: "SSS Izakaya"
-  description: "Detailed map of an Izakaya shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: izakaya
-    scale: 1.2, 1.2
 
 - type: entity
   parent: PosterBase
@@ -470,30 +410,6 @@
 
 - type: entity
   parent: PosterBase
-  id: ShuttleMapPulsar
-  name: "FSB Pulsar"
-  description: "Detailed map of a Pulsar shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: pulsar
-    scale: 1.2, 1.2
-
-- type: entity
-  parent: PosterBase
-  id: ShuttleMapRetort
-  name: "FSB Retort"
-  description: "Detailed map of a Retort shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: retort
-    scale: 1.2, 1.2
-
-- type: entity
-  parent: PosterBase
   id: ShuttleMapSearchlight
   name: "NM Searchlight"
   description: "Detailed map of a Searchlight shuttle."
@@ -547,18 +463,6 @@
   - type: Sprite
     sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
     state: surveyor
-
-- type: entity
-  parent: PosterBase
-  id: ShuttleMapSurveyor
-  name: "FSB Surveyor"
-  description: "Detailed map of a Surveyor shuttle."
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
-    state: surveyor
-    scale: 1.2, 1.2
 
 - type: entity
   parent: PosterBase
