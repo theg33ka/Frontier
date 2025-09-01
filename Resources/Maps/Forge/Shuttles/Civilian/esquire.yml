@@ -42,6 +42,8 @@ entities:
           version: 6
       type: MapGrid
     - type: Broadphase
+    - type: BecomesStation
+    id: Esquire
     - bodyStatus: InAir
       angularDamping: 0.05
       linearDamping: 0.05
