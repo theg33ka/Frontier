@@ -2337,24 +2337,6 @@ entities:
           length: 0.5
         storage: {}
     - type: InsideEntityStorage
-- proto: Multitool
-  entities:
-  - uid: 24
-    components:
-    - type: Transform
-      parent: 20
-    - type: NetworkConfigurator
-      lastUseAttempt: -5341.4489456
-    - type: EmitSoundOnCollide
-      nextSound: -5341.4489456
-    - type: Physics
-      canCollide: False
-  - uid: 218
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 4.5259066,-6.4956703
-      parent: 1
 - proto: NitrogenTank
   entities:
   - uid: 45
@@ -2582,22 +2564,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.9689188,-6.939846
       parent: 1
-- proto: Screwdriver
-  entities:
-  - uid: 25
-    components:
-    - type: Transform
-      parent: 20
-    - type: MeleeWeapon
-      nextAttack: -5341.4489456
-    - type: RandomSprite
-      selected:
-        enum.DamageStateVisualLayers.Base:
-          screwdriver: '#18A2D5FF'
-    - type: EmitSoundOnCollide
-      nextSound: -5341.4489456
-    - type: Physics
-      canCollide: False
 - proto: SheetSteel1
   entities:
   - uid: 237
@@ -3066,53 +3032,6 @@ entities:
     - type: Transform
       pos: 2.6436634,0.13468552
       parent: 1
-- proto: Welder
-  entities:
-  - uid: 21
-    components:
-    - type: Transform
-      parent: 20
-    - type: UseDelay
-      delays:
-        default:
-          endTime: 0
-          startTime: 0
-          length: 1
-    - type: MeleeWeapon
-      nextAttack: -5341.4489456
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - Welder
-    - type: EmitSoundOnCollide
-      nextSound: -5341.4489456
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@Welder: !type:ContainerSlot
-          ent: 22
-  - uid: 308
-    components:
-    - type: Transform
-      pos: 4.6945233,-3.4888382
-      parent: 1
-- proto: Wirecutter
-  entities:
-  - uid: 26
-    components:
-    - type: Transform
-      parent: 20
-    - type: MeleeWeapon
-      nextAttack: -5341.4489456
-    - type: RandomSprite
-      selected:
-        enum.DamageStateVisualLayers.Base:
-          cutters: '#A05212FF'
-    - type: EmitSoundOnCollide
-      nextSound: -5341.4489456
-    - type: Physics
-      canCollide: False
 - proto: Wrench
   entities:
   - uid: 27

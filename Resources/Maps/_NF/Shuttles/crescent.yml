@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/17/2025 21:30:19
-  entityCount: 3713
+  time: 06/07/2025 11:19:25
+  entityCount: 3717
 maps: []
 grids:
 - 1
@@ -1012,12 +1012,10 @@ entities:
 - proto: ActionToggleLight
   entities:
   - uid: 1130
-    mapInit: true
-    paused: true
     components:
     - type: Transform
       parent: 2230
-    - type: Action
+    - type: InstantAction
       container: 2230
 - proto: AirAlarm
   entities:
@@ -9132,11 +9130,6 @@ entities:
       parent: 1
 - proto: DVSmartFridge
   entities:
-  - uid: 1205
-    components:
-    - type: Transform
-      pos: 6.5,3.5
-      parent: 1
   - uid: 2803
     components:
     - type: Transform
@@ -16362,26 +16355,19 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: KitchenAssembler
+- proto: KitchenElectricGrill
   entities:
-  - uid: 1211
-    components:
-    - type: Transform
-      pos: 3.5,3.5
-      parent: 1
-- proto: KitchenElectricRange
-  entities:
-  - uid: 1206
-    components:
-    - type: Transform
-      pos: 3.5,5.5
-      parent: 1
-- proto: KitchenMicrowave
-  entities:
-  - uid: 129
+  - uid: 911
     components:
     - type: Transform
       pos: 4.5,3.5
+      parent: 1
+- proto: KitchenMicrowave
+  entities:
+  - uid: 1195
+    components:
+    - type: Transform
+      pos: 5.5,5.5
       parent: 1
 - proto: KitchenReagentGrinder
   entities:
@@ -17037,6 +17023,24 @@ entities:
     components:
     - type: Transform
       pos: 14.5,20.5
+      parent: 1
+- proto: PowerCellRecharger
+  entities:
+  - uid: 2289
+    components:
+    - type: Transform
+      pos: -25.5,21.5
+      parent: 1
+  - uid: 2290
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 28.5,18.5
+      parent: 1
+  - uid: 3726
+    components:
+    - type: Transform
+      pos: 9.5,16.5
       parent: 1
 - proto: Poweredlight
   entities:
@@ -18195,10 +18199,10 @@ entities:
       parent: 1
 - proto: ServiceTechFab
   entities:
-  - uid: 1195
+  - uid: 2223
     components:
     - type: Transform
-      pos: 5.5,5.5
+      pos: 4.5,5.5
       parent: 1
 - proto: ShuttersNormal
   entities:
@@ -19571,11 +19575,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-0.5
       parent: 1
-  - uid: 1190
-    components:
-    - type: Transform
-      pos: 4.5,3.5
-      parent: 1
   - uid: 1207
     components:
     - type: Transform
@@ -19593,6 +19592,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 3.5,3.5
+      parent: 1
+  - uid: 1211
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 4.5,3.5
       parent: 1
   - uid: 1212
     components:
@@ -19644,6 +19649,17 @@ entities:
       parent: 1
 - proto: TableCounterMetal
   entities:
+  - uid: 1190
+    components:
+    - type: Transform
+      pos: 5.5,5.5
+      parent: 1
+  - uid: 1285
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 6.5,3.5
+      parent: 1
   - uid: 2698
     components:
     - type: Transform
@@ -20134,10 +20150,10 @@ entities:
       parent: 1
 - proto: VendingMachineChefvend
   entities:
-  - uid: 911
+  - uid: 1206
     components:
     - type: Transform
-      pos: 4.5,5.5
+      pos: 3.5,5.5
       parent: 1
 - proto: VendingMachineChemDrobe
   entities:
@@ -23542,26 +23558,24 @@ entities:
       parent: 1
 - proto: WeaponCapacitorRecharger
   entities:
-  - uid: 2289
-    components:
-    - type: Transform
-      pos: -25.5,21.5
-      parent: 1
-  - uid: 2290
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 28.5,18.5
-      parent: 1
   - uid: 3429
     components:
     - type: Transform
       pos: 7.5,24.5
       parent: 1
-  - uid: 3726
+- proto: Windoor
+  entities:
+  - uid: 1205
     components:
     - type: Transform
-      pos: 9.5,16.5
+      rot: -1.5707963267948966 rad
+      pos: 6.5,3.5
+      parent: 1
+  - uid: 2318
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 6.5,3.5
       parent: 1
 - proto: WindoorSecure
   entities:
@@ -23616,6 +23630,19 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 27.5,24.5
+      parent: 1
+- proto: WindowDirectional
+  entities:
+  - uid: 2319
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,3.5
+      parent: 1
+  - uid: 2403
+    components:
+    - type: Transform
+      pos: 6.5,3.5
       parent: 1
 - proto: Wrench
   entities:

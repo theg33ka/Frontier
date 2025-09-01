@@ -729,7 +729,7 @@ entities:
     - type: Transform
       pos: -1.4055399,-3.387681
       parent: 8756
-- proto: JukeboxPOI
+- proto: JukeboxShip
   entities:
   - uid: 77
     components:
