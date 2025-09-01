@@ -43,7 +43,7 @@ entities:
           version: 7
     - type: Broadphase
     - type: BecomesStation
-    id: Sergeant
+      id: Sergeant
     - type: Physics
       bodyStatus: InAir
       angularDamping: 0.05

@@ -39,7 +39,7 @@ entities:
           version: 6
     - type: Broadphase
     - type: BecomesStation
-    id: Cleithro
+      id: Cleithro
     - type: Physics
       bodyStatus: InAir
       angularDamping: 0.05

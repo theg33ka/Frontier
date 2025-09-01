@@ -44,7 +44,7 @@ entities:
           version: 7
     - type: Broadphase
     - type: BecomesStation
-    id: Unit
+      id: Unit
     - type: Physics
       bodyStatus: InAir
       angularDamping: 0.05

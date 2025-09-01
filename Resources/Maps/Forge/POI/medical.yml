@@ -76,7 +76,7 @@ entities:
           version: 7
     - type: Broadphase
     - type: BecomesStation
-    id: Medical
+      id: Medical
     - type: Physics
       bodyStatus: InAir
       angularDamping: 0.05

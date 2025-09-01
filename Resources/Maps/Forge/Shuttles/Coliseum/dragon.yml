@@ -34,7 +34,7 @@ entities:
           version: 6
     - type: Broadphase
     - type: BecomesStation
-    id: Dragon
+      id: Dragon
     - type: Physics
       bodyStatus: InAir
       angularDamping: 0.05
