@@ -4553,13 +4553,6 @@ entities:
     - type: Transform
       pos: -5.7246623,-4.443306
       parent: 1
-- proto: JukeboxShip
-  entities:
-  - uid: 365
-    components:
-    - type: Transform
-      pos: 2.5,-15.5
-      parent: 1
 - proto: LockerAtmosphericsFilled
   entities:
   - uid: 490
