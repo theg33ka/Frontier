@@ -4,7 +4,7 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/14/2025 01:10:13
+  time: 09/05/2025 10:09:28
   entityCount: 1558
 maps: []
 grids:
@@ -32,7 +32,7 @@ entities:
       pos: -0.5,-0.5
       parent: invalid
     - type: BecomesStation
-      id: Centurion
+      id: centurion
     - type: MapGrid
       chunks:
         0,0:
@@ -984,14 +984,13 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: ImplicitRoof
 - proto: ActionToggleBlock
   entities:
   - uid: 594
     components:
     - type: Transform
       parent: 981
-    - type: InstantAction
-      container: 981
 - proto: AirAlarm
   entities:
   - uid: 1487
