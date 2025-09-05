@@ -144,7 +144,7 @@
   group: market
 
 - type: cargoProduct
-  id: ServiceSodaDispenser  
+  id: ServiceSodaDispenser
   icon:
     sprite: Objects/Consumable/Drinks/generic_jug.rsi
     state: icon
@@ -154,7 +154,7 @@
   group: market
 
 - type: cargoProduct
-  id: ServiceBoozeDispenser  
+  id: ServiceBoozeDispenser
   icon:
     sprite: Objects/Consumable/Drinks/generic_jug.rsi
     state: icon

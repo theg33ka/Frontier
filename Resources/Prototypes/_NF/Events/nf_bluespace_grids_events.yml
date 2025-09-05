@@ -3,7 +3,6 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    
     startAnnouncement: station-event-bluespace-cache-start-announcement
     startAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_cache_arrival.ogg
@@ -54,7 +53,6 @@
     endAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_vault_leave.ogg
     warningAnnouncement: station-event-bluespace-vault-warning-announcement
-
     earliestStart: 100
     weight: 5
     duration: 1020

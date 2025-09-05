@@ -2072,7 +2072,7 @@ entities:
       parent: 1
     missingComponents:
     - Construction
-    - Destructible 
+    - Destructible
 - proto: AirlockHatchMaintenance
   entities:
   - uid: 41

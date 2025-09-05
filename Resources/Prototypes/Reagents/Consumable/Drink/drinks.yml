@@ -345,7 +345,7 @@
       - !type:ModifyStatusEffect # Forge-Change
         effectProto: StatusEffectDrowsiness # Forge-Change
         time: 3 # Forge-Change
-        type: Remove 
+        type: Remove
     Poison:
       effects:
       - !type:HealthChange

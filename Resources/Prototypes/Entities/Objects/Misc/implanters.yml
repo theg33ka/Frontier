@@ -204,7 +204,7 @@
     - type: Implanter
       implant: StorageImplant
     - type: StaticPrice #CorvaxFrontier
-      price: 300 
+      price: 300
 - type: entity
   id: FreedomImplanter
   name: freedom implanter
