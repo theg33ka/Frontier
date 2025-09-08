@@ -131,14 +131,6 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-- proto: ActionToggleLight
-  entities:
-  - uid: 3
-    components:
-    - type: Transform
-      parent: 1
-    - type: InstantAction
-      container: 1
 - proto: AirAlarm
   entities:
   - uid: 160
