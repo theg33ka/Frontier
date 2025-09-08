@@ -6755,6 +6755,7 @@ entities:
       toggleActionEntity: 52
     - type: Jetpack
       toggleActionEntity: 53
+      toggleAction: ActionToggleJetpack
     - type: Physics
       canCollide: False
     - type: ActionsContainer
