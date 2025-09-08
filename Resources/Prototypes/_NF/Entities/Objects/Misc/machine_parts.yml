@@ -16,6 +16,9 @@
       rating: 1
     - type: Stack
       stackType: Capacitor
+    - type: Tag
+      tags:
+      - CapacitorStockPart
 
 - type: entity
   id: MatterBinStockPart

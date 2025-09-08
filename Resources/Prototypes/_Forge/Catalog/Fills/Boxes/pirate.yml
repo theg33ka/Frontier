@@ -9,9 +9,12 @@
       - id: AdvancedCapacitorStockPart
         amount: 9
   - type: Storage
-    maxItemSize: Small
+    maxItemSize: Normal
     grid:
-    - 0,0,1,1
+    - 0,0,2,3
+    whitelist:
+      tags:
+        - CapacitorStockPart
   - type: Sprite
     sprite: Forge/Boxes/pirate.rsi
     state: boxpirat

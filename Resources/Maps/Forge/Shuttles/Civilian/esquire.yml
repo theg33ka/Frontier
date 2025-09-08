@@ -249,8 +249,6 @@ entities:
       type: GridAtmosphere
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - id: Esquire
-      type: BecomesStation
 - proto: AirAlarm
   entities:
   - uid: 7
