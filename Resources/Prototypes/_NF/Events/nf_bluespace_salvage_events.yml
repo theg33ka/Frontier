@@ -32,7 +32,6 @@
           preventArtifactTriggers: true
         - type: PreventPilot
         paths:
-        - /Maps/Forge/Shuttles/Scrap/bison.yml
 #        - /Maps/Forge/Shuttles/Scrap/canister.yml # Too small
         - /Maps/Forge/Shuttles/Scrap/disciple.yml
         - /Maps/Forge/Shuttles/Scrap/nugget.yml

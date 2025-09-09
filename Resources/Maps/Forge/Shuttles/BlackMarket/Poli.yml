@@ -4,8 +4,8 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/08/2025 14:08:49
-  entityCount: 1262
+  time: 09/09/2025 13:22:47
+  entityCount: 1261
 maps: []
 grids:
 - 1
@@ -1122,6 +1122,7 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Poli
+    - type: ImplicitRoof
   - uid: 26
     components:
     - type: MetaData
@@ -1295,43 +1296,30 @@ entities:
     components:
     - type: Transform
       parent: 49
-    - type: InstantAction
-      container: 49
   - uid: 52
     components:
     - type: Transform
       parent: 51
-    - type: InstantAction
-      container: 51
   - uid: 55
     components:
     - type: Transform
       parent: 54
-    - type: InstantAction
-      container: 54
   - uid: 69
     components:
     - type: Transform
       parent: 68
-    - type: InstantAction
-      container: 68
 - proto: ActionToggleJetpack
   entities:
   - uid: 53
     components:
     - type: Transform
       parent: 51
-    - type: InstantAction
-      container: 51
 - proto: ActionToggleSuitPiece
   entities:
   - uid: 57
     components:
     - type: Transform
       parent: 56
-    - type: InstantAction
-      container: 56
-      entIcon: 58
 - proto: AirAlarm
   entities:
   - uid: 76
@@ -4849,7 +4837,7 @@ entities:
       pos: 4.5,-0.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -10092.306
+      secondsUntilStateChange: -10131.973
       state: Opening
 - proto: CurtainsPurple
   entities:
@@ -6755,7 +6743,6 @@ entities:
       toggleActionEntity: 52
     - type: Jetpack
       toggleActionEntity: 53
-      toggleAction: ActionToggleJetpack
     - type: Physics
       canCollide: False
     - type: ActionsContainer
@@ -9640,14 +9627,6 @@ entities:
           startTime: 253705.5018406
           length: 0.5
         storage: {}
-- proto: WeaponNavalCannon53mmUnanchor
-  entities:
-  - uid: 13
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,2.5
-      parent: 1
 - proto: WeaponNavalCannon53mm
   entities:
   - uid: 12
@@ -9661,6 +9640,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -7.5,0.5
+      parent: 1
+- proto: WeaponNavalCannon53mmUnanchor
+  entities:
+  - uid: 13
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -7.5,2.5
       parent: 1
 - proto: WindoorSecure
   entities:
@@ -9701,7 +9688,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -11908.031
+      secondsUntilStateChange: -11947.698
       state: Opening
 - proto: WindowReinforcedDirectional
   entities:
