@@ -985,12 +985,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ImplicitRoof
-- proto: ActionToggleBlock
-  entities:
-  - uid: 594
-    components:
-    - type: Transform
-      parent: 981
 - proto: AirAlarm
   entities:
   - uid: 1487
@@ -7869,14 +7863,6 @@ entities:
     - type: Transform
       pos: 7.5133557,-7.49857
       parent: 1
-    - type: Blocking
-      blockingToggleActionEntity: 594
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 594
 - proto: SecBreachingHammer
   entities:
   - uid: 983

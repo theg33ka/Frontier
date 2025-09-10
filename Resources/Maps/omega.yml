@@ -34239,14 +34239,6 @@ entities:
     - type: Transform
       pos: -18.519077,-23.380693
       parent: 4812
-    - type: Stethoscope
-      actionEntity: 917
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 917
 - proto: ClothingNeckTieRed
   entities:
   - uid: 10922

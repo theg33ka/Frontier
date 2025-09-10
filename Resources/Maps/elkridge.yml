@@ -58002,27 +58002,11 @@ entities:
     - type: Transform
       pos: -42.005676,-47.54647
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 2041
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 2041
   - uid: 17114
     components:
     - type: Transform
       pos: -42.005676,-47.54647
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 17115
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 17115
 - proto: EmergencyLight
   entities:
   - uid: 100

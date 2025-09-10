@@ -869,40 +869,6 @@ entities:
     - type: ContainedSolution
       containerName: food
       container: 6
-  - uid: 9
-    components:
-    - type: MetaData
-      name: solution - food
-    - type: Transform
-      parent: 8
-    - type: Solution
-      solution:
-        maxVol: 10
-        name: food
-        reagents:
-        - data: []
-          ReagentId: Fiber
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: food
-      container: 8
-  - uid: 11
-    components:
-    - type: MetaData
-      name: solution - food
-    - type: Transform
-      parent: 10
-    - type: Solution
-      solution:
-        maxVol: 5
-        name: food
-        reagents:
-        - data: []
-          ReagentId: Zinc
-          Quantity: 5
-    - type: ContainedSolution
-      containerName: food
-      container: 10
   - uid: 16
     components:
     - type: MetaData
@@ -960,23 +926,6 @@ entities:
     - type: ContainedSolution
       containerName: Welder
       container: 21
-- proto: ActionToggleLight
-  entities:
-  - uid: 12
-    components:
-    - type: Transform
-      parent: 8
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 8
-  - uid: 13
-    components:
-    - type: Transform
-      parent: 8
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 8
-      attachedEntity: 8
 - proto: AirAlarm
   entities:
   - uid: 33
@@ -1729,38 +1678,8 @@ entities:
     components:
     - type: Transform
       parent: 2
-    - type: HandheldLight
-      selfToggleActionEntity: 13
-      toggleActionEntity: 12
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 10
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 12
-          - 13
-        solution@food: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 9
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
-    - type: EmitSoundOnCollide
-      nextSound: -5341.4489456
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: Actions
-      actions:
-      - 13
-    - type: InsideEntityStorage
 - proto: ClothingMaskGasExplorer
   entities:
   - uid: 28
@@ -2489,22 +2408,6 @@ entities:
       containers:
         solution@food: !type:ContainerSlot
           ent: 5
-  - uid: 10
-    components:
-    - type: Transform
-      parent: 8
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
-    - type: EmitSoundOnCollide
-      nextSound: -5341.4489456
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@food: !type:ContainerSlot
-          ent: 11
 - proto: PoweredSmallLight
   entities:
   - uid: 228
