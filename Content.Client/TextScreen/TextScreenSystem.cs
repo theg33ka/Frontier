@@ -54,7 +54,7 @@ public sealed class TextScreenSystem : VisualizerSystem<TextScreenVisualsCompone
     /// </summary>
     private const string TimerMapKey = "timerMapKey";
     private const string TextPath = "Effects/text.rsi";
-    private const int CharWidth = 4;
+    private const int CharWidth = 6;
 
     public override void Initialize()
     {
