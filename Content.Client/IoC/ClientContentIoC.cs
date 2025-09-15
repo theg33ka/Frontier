@@ -26,6 +26,7 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Client._Forge.DiscordAuth; // Forge-Change
 
 namespace Content.Client.IoC
 {
@@ -62,6 +63,7 @@ namespace Content.Client.IoC
             collection.Register<PlayerRateLimitManager>();
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<TitleWindowManager>();
+            collection.Register<DiscordAuthManager>(); // Forge-Change
             collection.Register<SponsorManager>(); // Forge-Change
             collection.Register<ISharedSponsorManager, SponsorManager>(); // Forge-Change
         }
