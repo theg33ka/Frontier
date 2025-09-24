@@ -56,7 +56,7 @@
 | `_Impstation` | Impstation | https://github.com/impstation/imp-station-14 | AGPL 3.0 |
 | `_NC14` | Nuclear 14 | https://github.com/Vault-Overseers/nuclear-14 | AGPL 3.0 |
 | `Nyanotrasen` | Nyanotrasen | https://github.com/Nyanotrasen/Nyanotrasen | MIT |
-| `_Wega` | Wega | https://github.com/wega-team | GPL 3.0 |
+| `_Wega` | Wega | https://github.com/wega-team/ss14-wega | GPL 3.0 |
 
 Дополнительные репозитории с портированным кодом (без пространств имён):
 
