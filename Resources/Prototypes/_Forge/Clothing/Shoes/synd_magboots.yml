@@ -25,6 +25,10 @@
     size: Normal
   - type: Magboots
     magbootsAlert: MagbootsSyndElite
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: StepHeavyBoots
+
 
 - type: alert
   id: MagbootsSyndElite

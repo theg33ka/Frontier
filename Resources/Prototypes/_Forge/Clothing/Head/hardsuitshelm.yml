@@ -39,7 +39,14 @@
     sprite: Forge/Clothing/Head/Hardsuits/syndicate_strike_team.rsi
   - type: Clothing
     sprite: Forge/Clothing/Head/Hardsuits/syndicate_strike_team.rsi
+    equippedPrefix: off
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: equipped-HELMET-unshaded
+        shader: unshaded
   - type: PointLight
+    color: darkred
     radius: 7
     energy: 3
   - type: PressureProtection
