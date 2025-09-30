@@ -15,7 +15,7 @@
   parent: BaseVessel
   name: GS Капеллан
   description: Крупногабаритный исследовательский шаттл. Рекомендованный размер команды 3-6 человек.
-  price: 200000
+  price: 220000
   category: Large
   group: Expedition
   shuttlePath: /Maps/Forge/Shuttles/Expedition/capellan.yml
