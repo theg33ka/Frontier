@@ -18,7 +18,8 @@ public sealed class SponsorData
         { "1351127483432570910", SponsorLevel.Level4 }, // ГГМ
         { "1227934528442728498", SponsorLevel.Level4 }, // Начкар
         { "1229422799362195577", SponsorLevel.Level4 }, // Старший ментор
-        { "1257628115988119562", SponsorLevel.Level3 } // Смотритель Сервера
+        { "1257628115988119562", SponsorLevel.Level3 }, // Смотритель Сервера
+        { "1226554881398280272", SponsorLevel.Level2 } // Модератор
     };
 
     public static readonly Dictionary<SponsorLevel, string> SponsorColor = new()
