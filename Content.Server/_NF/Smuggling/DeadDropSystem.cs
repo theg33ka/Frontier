@@ -26,6 +26,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 using Content.Server._NF.Station.Systems;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.EntitySerialization;
@@ -450,8 +451,31 @@ public sealed class DeadDropSystem : EntitySystem
                 return;
         }
 
-        //load whatever grid was specified on the component, either a special dead drop or default
-        if (!_map.TryLoadGrid(_shipyard.ShipyardMap.Value, component.DropGrid, out var gridUid))
+        // Select a random grid based on the weights defined in the component
+        if (component.DropGrids.Count == 0)
+        {
+            _sawmill.Error($"Dead drop {ToPrettyString(uid)} has no drop grids defined.");
+            return;
+        }
+
+        var totalWeight = component.DropGrids.Values.Sum();
+        var randomValue = _random.NextFloat(totalWeight);
+        string? selectedGrid = null;
+
+        foreach (var (gridPath, weight) in component.DropGrids)
+        {
+            if (randomValue < weight)
+            {
+                selectedGrid = gridPath;
+                break;
+            }
+            randomValue -= weight;
+        }
+
+        // Fallback to the first grid if something goes wrong with the weights.
+        selectedGrid ??= component.DropGrids.Keys.First();
+
+        if (!_map.TryLoadGrid(_shipyard.ShipyardMap.Value, new ResPath(selectedGrid), out var gridUid))
             return;
         var grid = gridUid.Value;
 
