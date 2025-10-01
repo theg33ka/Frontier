@@ -76,7 +76,6 @@ public sealed class DeadDropSystem : EntitySystem
 
         SubscribeLocalEvent<DeadDropComponent, ComponentStartup>(OnStartup); //TODO: compromise on shutdown if the stat
         SubscribeLocalEvent<DeadDropComponent, GetVerbsEvent<InteractionVerb>>(AddSearchVerb);
-        SubscribeLocalEvent<DeadDropComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<DeadDropComponent, AnchorStateChangedEvent>(OnDeadDropUnanchored);
         SubscribeLocalEvent<StationDeadDropComponent, ComponentStartup>(OnStationStartup);
         SubscribeLocalEvent<StationDeadDropComponent, ComponentShutdown>(OnStationShutdown);
@@ -420,37 +419,20 @@ public sealed class DeadDropSystem : EntitySystem
 
     private void AddSearchVerb(EntityUid uid, DeadDropComponent component, GetVerbsEvent<InteractionVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess || args.Hands == null || _timing.CurTime < component.NextDrop)
+        // The verb is only visible when the dead drop is ready.
+        if (!args.CanInteract || !args.CanAccess || args.Hands is not { } hands || _timing.CurTime < component.NextDrop)
             return;
 
-        var xform = Transform(uid);
-        var targetCoordinates = xform.Coordinates;
-
-        //here we build our dynamic verb. Using the object's sprite for now to make it more dynamic for the moment.
         InteractionVerb searchVerb = new()
         {
             IconEntity = GetNetEntity(uid),
-            Act = () => SendDeadDrop(uid, component, args.User, args.Hands),
+            // We pass the non-nullable `hands` variable captured from the check above.
+            Act = () => SendDeadDrop(uid, component, args.User, hands),
             Text = Loc.GetString("deaddrop-search-text"),
             Priority = 3
         };
 
         args.Verbs.Add(searchVerb);
-    }
-
-    private void OnActivate(EntityUid uid, DeadDropComponent component, ActivateInWorldEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        if (args.User == null || !TryComp<HandsComponent>(args.User, out var hands))
-            return;
-
-        if (_timing.CurTime < component.NextDrop)
-            return;
-
-        SendDeadDrop(uid, component, args.User, hands);
-        args.Handled = true;
     }
 
     //spawning the dead drop.
@@ -545,7 +527,7 @@ public sealed class DeadDropSystem : EntitySystem
         dropHint.AppendLine(Loc.GetString("deaddrop-hint-next-drop", ("time", hintNextDrop.ToString("hh\\:mm") + ":00")));
 
         // Spawn the paper, but ensure it's a valid entity before proceeding.
-        var paperUid = EntityManager.SpawnEntity(component.HintPaper, Transform(uid).Coordinates);
+        var paperUid = EntityManager.SpawnEntity(component.HintPaper, Transform(user).Coordinates);
         if (!paperUid.Valid)
         {
             _sawmill.Error($"Failed to spawn hint paper with prototype '{component.HintPaper}' for dead drop {ToPrettyString(uid)}.");
@@ -559,7 +541,7 @@ public sealed class DeadDropSystem : EntitySystem
         }
         _meta.SetEntityName(paperUid, Loc.GetString("deaddrop-hint-name"));
         _meta.SetEntityDescription(paperUid, Loc.GetString("deaddrop-hint-desc"));
-        _hands.PickupOrDrop(user, paperUid, handsComp: hands);
+        _hands.TryPickupAnyHand(user, paperUid, handsComp: hands);
 
         component.DeadDropCalled = true;
         //logic of posters ends here and logic of radio signals begins here
