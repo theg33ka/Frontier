@@ -26,7 +26,7 @@ public sealed class SponsorData
     {
         { SponsorLevel.Level1, "#6bb9f0" },
         { SponsorLevel.Level2, "#8a9eff" },
-        { SponsorLevel.Level3, "#bdbe6b" },
+        { SponsorLevel.Level3, "#6b8e23" },
         { SponsorLevel.Level4, "#bdbe6b" },
         { SponsorLevel.Level5, "#ff9e2c" },
         { SponsorLevel.Level6, "#ffd700" }
