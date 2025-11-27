@@ -4,8 +4,8 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/27/2025 08:38:47
-  entityCount: 2251
+  time: 11/27/2025 10:07:17
+  entityCount: 2254
 maps: []
 grids:
 - 1
@@ -1394,6 +1394,13 @@ entities:
             293: 5,18
             294: 5,17
         - node:
+            color: '#007FC3FF'
+            id: WarnLineGreyscaleN
+          decals:
+            1053: 9,0
+            1054: 8,0
+            1055: 7,0
+        - node:
             color: '#50A5BDFF'
             id: WarnLineGreyscaleN
           decals:
@@ -1452,6 +1459,12 @@ entities:
           decals:
             298: 9,10
         - node:
+            color: '#FFFFFFFF'
+            id: WarnLineGreyscaleS
+          decals:
+            1048: 7,14
+            1052: 11,8
+        - node:
             color: '#50A5BDFF'
             id: WarnLineGreyscaleW
           decals:
@@ -1481,6 +1494,13 @@ entities:
           decals:
             295: 7,18
             296: 7,17
+        - node:
+            color: '#FFFFFFFF'
+            id: WarnLineGreyscaleW
+          decals:
+            1049: 11,10
+            1050: 11,11
+            1051: 11,8
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerNe
@@ -5891,6 +5911,21 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 10.5,-10.5
       parent: 1
+  - uid: 2252
+    components:
+    - type: Transform
+      pos: -0.5,-0.5
+      parent: 1
+  - uid: 2253
+    components:
+    - type: Transform
+      pos: 0.5,-0.5
+      parent: 1
+  - uid: 2254
+    components:
+    - type: Transform
+      pos: 1.5,-0.5
+      parent: 1
 - proto: ChairOfficeLight
   entities:
   - uid: 754
@@ -6644,7 +6679,7 @@ entities:
       pos: 10.5,-6.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -660.22894
+      secondsUntilStateChange: -5967.157
       state: Opening
   - uid: 863
     components:
@@ -6652,7 +6687,7 @@ entities:
       pos: 7.5,-6.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -660.6956
+      secondsUntilStateChange: -5967.6235
       state: Opening
 - proto: CurtainsBlueOpen
   entities:
@@ -8023,6 +8058,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-0.5
       parent: 1
+    - type: AtmosPipeColor
+      color: '#990000FF'
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
 - proto: GasPipeBend
