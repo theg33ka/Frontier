@@ -15,7 +15,7 @@
   parent: BaseVessel
   name: GS Домра
   description: Крупногабаритный исследовательский шаттл. Рекомендованный размер команды 2-5 человек.
-  price: 192000
+  price: 184000
   category: Large
   group: Expedition
   shuttlePath: /Maps/_Forge/Shuttles/Expedition/domra.yml
