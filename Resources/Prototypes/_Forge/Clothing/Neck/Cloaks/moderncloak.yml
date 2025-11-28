@@ -277,7 +277,7 @@
     slots:
     - Hair
 
-#Desert
+#Desert(вызывает ошибку сборки, хотя на локале работает?)
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakModernCloakDesert
