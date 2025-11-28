@@ -280,14 +280,14 @@
 #Desert
 - type: entity
   parent: ClothingNeckBase
-  id: ClothingNeckCloakModernCloakRed
+  id: ClothingNeckCloakModernCloakDesert
   name: Плащ "Модерн" [Красный]
   description: Прочный плащ из современных материалов.
   components:
   - type: Sprite
     sprite: Forge/Clothing/Neck/Cloaks/ModernCloak/moderncloakDesert.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodModernCloakRed
+    clothingPrototype: ClothingHeadHatHoodModernCloakDesert
     requiredSlot:
     - neck
     slot: head
@@ -297,7 +297,7 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatHoodModernCloakRed
+  id: ClothingHeadHatHoodModernCloakDesert
   name: Капюшон "Модерн" [Красный]
   description: Прочный капюшон из современных материалов.
   components:
