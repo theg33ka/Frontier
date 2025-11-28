@@ -39,8 +39,6 @@ entities:
     components:
     - type: MetaData
       name: Домра
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
