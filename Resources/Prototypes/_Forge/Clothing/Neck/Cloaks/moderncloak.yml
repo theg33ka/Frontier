@@ -277,17 +277,17 @@
     slots:
     - Hair
 
-#Desert(вызывает ошибку сборки, хотя на локале работает?)
+#Desert
 - type: entity
   parent: ClothingNeckBase
-  id: ClothingNeckCloakModernCloakDesert
-  name: Плащ "Модерн" [Пустынный]
+  id: ClothingNeckCloakModernCloakRed
+  name: Плащ "Модерн" [Красный]
   description: Прочный плащ из современных материалов.
   components:
   - type: Sprite
-    sprite: Forge/Clothing/Neck/Cloaks/ModernCloak/modernCloakDesert.rsi
+    sprite: Forge/Clothing/Neck/Cloaks/ModernCloak/moderncloakDesert.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodModernCloakDesert
+    clothingPrototype: ClothingHeadHatHoodModernCloakRed
     requiredSlot:
     - neck
     slot: head
@@ -297,8 +297,8 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatHoodModernCloakDesert
-  name: Капюшон "Модерн" [Пустынный]
+  id: ClothingHeadHatHoodModernCloakRed
+  name: Капюшон "Модерн" [Красный]
   description: Прочный капюшон из современных материалов.
   components:
   - type: Sprite
