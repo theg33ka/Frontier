@@ -22,7 +22,7 @@
 
 - type: gameMap
   id: Domra
-  mapName: 'GS Домра'
+  mapName: 'Домра'
   mapPath: /Maps/_Forge/Shuttles/Expedition/domra.yml
   minPlayers: 0
   stations:

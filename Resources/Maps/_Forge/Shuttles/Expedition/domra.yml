@@ -4,8 +4,8 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/28/2025 13:34:54
-  entityCount: 2254
+  time: 11/29/2025 15:33:50
+  entityCount: 2264
 maps: []
 grids:
 - 1
@@ -40,7 +40,6 @@ entities:
     - type: MetaData
       name: Домра
     - type: Transform
-      pos: -100,0
       parent: invalid
     - type: MapGrid
       chunks:
@@ -1891,6 +1890,10 @@ entities:
     - type: Transform
       pos: 1.5,7.5
       parent: 1
+    - type: DeviceList
+      devices:
+      - 1330
+      - 1341
   - uid: 6
     components:
     - type: Transform
@@ -1902,6 +1905,10 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,3.5
       parent: 1
+    - type: DeviceList
+      devices:
+      - 41
+      - 1340
   - uid: 8
     components:
     - type: Transform
@@ -2134,6 +2141,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 7
 - proto: AnomalyLocator
   entities:
   - uid: 42
@@ -6680,7 +6690,7 @@ entities:
       pos: 10.5,-6.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -9432.018
+      secondsUntilStateChange: -9641.379
       state: Opening
   - uid: 866
     components:
@@ -6688,7 +6698,7 @@ entities:
       pos: 7.5,-6.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -9432.483
+      secondsUntilStateChange: -9641.845
       state: Opening
 - proto: CurtainsBlueOpen
   entities:
@@ -7864,6 +7874,60 @@ entities:
     components:
     - type: Transform
       pos: 10.4839115,0.757391
+      parent: 1
+- proto: ExtinguisherCabinetFilled
+  entities:
+  - uid: 2255
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,39.5
+      parent: 1
+  - uid: 2257
+    components:
+    - type: Transform
+      pos: -8.5,9.5
+      parent: 1
+  - uid: 2258
+    components:
+    - type: Transform
+      pos: 7.5,9.5
+      parent: 1
+  - uid: 2259
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -8.5,18.5
+      parent: 1
+  - uid: 2260
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -5.5,39.5
+      parent: 1
+  - uid: 2261
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 12.5,-4.5
+      parent: 1
+  - uid: 2262
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,0.5
+      parent: 1
+  - uid: 2263
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,-1.5
+      parent: 1
+  - uid: 2264
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-1.5
       parent: 1
 - proto: FaxMachineShip
   entities:
@@ -9833,6 +9897,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.5,5.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 5
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 1331
@@ -9923,12 +9990,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,2.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 7
   - uid: 1341
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,5.5
       parent: 1
+    - type: DeviceNetwork
+      deviceLists:
+      - 5
     - type: AtmosPipeColor
       color: '#990000FF'
     - type: AtmosPipeLayers
@@ -10468,6 +10541,11 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -7.5,-6.5
+      parent: 1
+  - uid: 2256
+    components:
+    - type: Transform
+      pos: -10.5,-3.5
       parent: 1
 - proto: JukeboxWallmountShip
   entities:
