@@ -80,7 +80,7 @@
     neck: ClothingNeckCloakModernCloakBRed
 
 - type: loadout
-  id: ForgeMercModernCloakBRed
+  id: ForgeMercModernCloakBPurple
   price: 2000
   effects:
   - !type:GroupLoadoutEffect
