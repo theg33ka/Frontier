@@ -4,6 +4,7 @@
   name: пластитановая стена
   suffix: "ослабленная"
   components:
+<<<<<<< Updated upstream
     - type: Tag
       tags:
         - Wall
@@ -20,6 +21,47 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+=======
+  - type: Tag
+    tags:
+    - Wall
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 5000 # take Mono balance,
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+#    - type: Reflect # Frontier
+#      reflectProb: 0.15 # Frontier
+
+- type: entity
+  parent: WallPlastitaniumIndestructible
+  id: WallPlastitaniumVeryShuttle
+  name: пластитановая стена
+  suffix: Ослабленная, 2.5
+  components:
+  - type: Tag
+    tags:
+    - Wall
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 2500 # take Mono balance,
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+>>>>>>> Stashed changes
 #    - type: Reflect # Frontier
 #      reflectProb: 0.15 # Frontier
 
@@ -29,27 +71,26 @@
   name: plastitanium wall
   suffix: "Coliseum"
   components:
-    - type: Tag
-      tags:
-        - Wall
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 4000
-          behaviors:
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                Girder:
-                  min: 1
-                  max: 1
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-    - type: DeleteOnTrigger
-    - type: SpawnOnTrigger
-      proto: WallPlastitaniumShuttle
-    - type: RepeatingTrigger
-      delay: 60
+  - type: Tag
+    tags:
+    - Wall
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 4000
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DeleteOnTrigger
+  - type: SpawnOnTrigger
+    proto: WallPlastitaniumShuttle
+  - type: RepeatingTrigger
+    delay: 60
 
 - type: entity
   parent: WallPlastitaniumDiagonal
@@ -59,17 +100,15 @@
   components:
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
+    - trigger: !type:DamageTrigger
         damage: 4000
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-        - !type:PlaySoundBehavior
-          sound:
-            collection: MetalSlam
-    - trigger:
-        !type:DamageTrigger
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger: !type:DamageTrigger
         damage: 4000
       behaviors:
       - !type:ChangeConstructionNodeBehavior
@@ -78,7 +117,7 @@
         sound:
           collection: MetalSlam
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction" ]
   - type: DeleteOnTrigger
   - type: SpawnOnTrigger
     proto: WallPlastitaniumDiagonal
@@ -100,18 +139,28 @@
     node: woodWall
   - type: Destructible
     thresholds:
+<<<<<<< Updated upstream
     - trigger:
         !type:DamageTrigger
         damage: 1000
+=======
+    - trigger: !type:DamageTrigger
+        damage: 1800 # we take Mono wall balance, and im buff
+>>>>>>> Stashed changes
       behaviors:
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction" ]
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroyHeavy
+<<<<<<< Updated upstream
     - trigger:
         !type:DamageTrigger
         damage: 500
+=======
+    - trigger: !type:DamageTrigger
+        damage: 900
+>>>>>>> Stashed changes
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -119,7 +168,7 @@
       - !type:ChangeConstructionNodeBehavior
         node: Barricade
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction" ]
   - type: IconSmooth
     key: woods
     base: wood
@@ -127,3 +176,89 @@
     cost: 6
     delay: 8
     fx: EffectRCDDeconstruct8
+#g-tech solid
+- type: entity
+  parent: BaseWall
+  id: WallGTechInterior
+  name: G-Tech Wall Interior
+  suffix: Interior
+  components:
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct8
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 1600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger: !type:DamageTrigger
+        damage: 800
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: Forge\Structures\Walls\g_tech_interior.rsi
+  - type: Icon
+    sprite: Forge\Structures\Walls\g_tech_interior.rsi
+  - type: Construction
+    graph: Girder
+    node: shuttleInteriorWall
+  - type: IconSmooth
+    key: walls
+    base: state
+#g-tech diagonal
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallGTechDiagonal
+  name: G-Tech Wall Diagonal
+  suffix: diagonal, OUTPOST ONLY
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Tag
+    tags:
+    - Diagonal
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Forge\Structures\Walls\g_tech_diagonal.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 30500 # Forge-change, we take Mono - wall buff - 6x
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger: !type:DamageTrigger
+        damage: 30000 # Forge-change, we take Mono - wall buff - 6x
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Forge\Structures\Walls\g_tech_diagonal.rsi
+    state: state0
