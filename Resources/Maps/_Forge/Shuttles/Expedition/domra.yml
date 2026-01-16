@@ -2204,8 +2204,6 @@ entities:
       pos: 0.5,2.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
 - proto: AmeController
@@ -10081,8 +10079,6 @@ entities:
       pos: -0.5,2.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
   - uid: 1353
