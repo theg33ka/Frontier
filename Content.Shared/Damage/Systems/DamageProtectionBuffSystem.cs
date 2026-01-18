@@ -15,6 +15,6 @@ public sealed class DamageProtectionBuffSystem : EntitySystem
     {
         foreach (var modifier in component.Modifiers.Values)
             args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage,
-                DamageSpecifier.PenetrateArmor(modifier, args.Damage.ArmorPenetration)); // Forge edit
+                DamageSpecifier.PenetrateArmor(modifier, args.Damage.ArmorPenetration)); // Forge-Change
     }
 }

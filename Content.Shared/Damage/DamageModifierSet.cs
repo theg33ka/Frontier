@@ -1,6 +1,6 @@
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom; // Forge
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom; // Forge-Change
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Shared.Damage
@@ -26,7 +26,7 @@ namespace Content.Shared.Damage
         public Dictionary<string, float> FlatReduction = new();
 
         /// <summary>
-        /// Forge.
+        /// Forge-Change:
         /// Whether this modifier set will ignore incoming damage partial armor penetration, positive or negative.
         /// Used mainly for species modifier sets.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Content.Shared.Damage
         public int IgnoreArmorPierceFlags = (int) PartialArmorPierceFlags.None;
     }
 
-    // Forge start
+    // Forge-Change-Start
     public sealed class ArmorPierceFlags;
 
     [Flags, Serializable]
@@ -46,5 +46,5 @@ namespace Content.Shared.Damage
         Negative = 1 << 1,
         All = Positive | Negative,
     }
-    // Forge end
+    // Forge-Change-End
 }

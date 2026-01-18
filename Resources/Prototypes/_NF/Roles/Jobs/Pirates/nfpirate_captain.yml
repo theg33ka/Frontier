@@ -8,8 +8,8 @@
       time: 172800 # 48 hours
     - !type:RoleTimeRequirement
       role: JobSeniorOfficer
-      time: 10800 # 3 hours
-  whitelisted: true
+      time: 108000 # 30 hours
+  whitelisted: false
   startingGear: NFPirateCaptainGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

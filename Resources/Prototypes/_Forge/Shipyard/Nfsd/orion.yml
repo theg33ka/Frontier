@@ -18,7 +18,7 @@
   price: 489000
   category: Large
   group: Security
-  access: Bailiff
+  access: Frontier
   shuttlePath: /Maps/_Forge/Shuttles/Nfsd/orion.yml
   guidebookPage: Null
   class:

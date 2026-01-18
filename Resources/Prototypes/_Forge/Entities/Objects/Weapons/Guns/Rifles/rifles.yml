@@ -295,9 +295,9 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    fireRate: 2.1
+    fireRate: 1.3
     shotsPerBurst: 3
-    burstCooldown: 1
+    burstCooldown: 1.8
     projectileSpeed: 40
     minAngle: 19
     maxAngle: 27
@@ -588,14 +588,14 @@
 
 - type: entity
   name: Anarchist
-  parent: [BaseWeaponRifleAssaultChamber45, BaseC3SyndicateContraband, NFBaseWeaponFrameRifleAssaultCybersun]
+  parent: [BaseWeaponRifleAssaultChamber45, BaseC2ContrabandUnredeemable, NFBaseWeaponFrameRifleAssaultCybersun]
   id: WeaponRifleAnarchist
   description: The TechnicLogistic assault carbine from the Self-Defense Forces has a high authority and rate of fire, but the large caliber makes the weapon quite cumbersome.
   components:
   - type: Sprite
     sprite: Forge/Objects/Weapons/Guns/Rifles/anarchist.rsi
   - type: Gun
-    fireRate: 3
+    fireRate: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
   - type: ChamberMagazineAmmoProvider

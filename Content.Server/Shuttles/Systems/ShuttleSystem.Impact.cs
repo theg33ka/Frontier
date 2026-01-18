@@ -20,9 +20,6 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Numerics;
-using Content.Server.Explosion.Components;
-using Content.Shared.Explosion.Components;
-using Content.Shared.Tiles; //Forge-Change
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -97,13 +94,6 @@ public sealed partial class ShuttleSystem
         )
             return;
 
-        //Forge-Change-Start
-        if (TryComp<ProtectedGridComponent>(args.OurEntity, out var ourProt) && ourProt.NoGridCollision ||
-            TryComp<ProtectedGridComponent>(args.OtherEntity, out var otherProt) && otherProt.NoGridCollision
-        )
-            return;
-        //Forge-Change-End
-
         if (!_gridQuery.TryComp(args.OurEntity, out var ourGrid) ||
             !_gridQuery.TryComp(args.OtherEntity, out var otherGrid)
         )
@@ -141,7 +131,7 @@ public sealed partial class ShuttleSystem
             var effectiveInertia = jungleDiff * effectiveInertiaMult;
 
             // TODO: squish damage so that a tiny splinter grid can't stop 2 big grids by being in the way
-            if (jungleDiff < _minimumImpactVelocity || effectiveInertia < _minimumImpactInertia // Change-Forge
+            if (jungleDiff < _minimumImpactVelocity && effectiveInertia < _minimumImpactInertia
                 || ourXform.MapUid == null
                 || float.IsNaN(jungleDiff))
             {
@@ -175,12 +165,12 @@ public sealed partial class ShuttleSystem
             // E = MV^2/2
             var energyMult = MathF.Pow(jungleDiff, 2) / 2;
             // mass-based damage reduction to grid with more mass so that plastitanium block rammer doesn't die to lattice
-            var ourMassDR = MathF.Pow(otherMass / ourMass, _massBias); // Change-Forge: var ourMassDR = MathF.Max(otherMass / ourMass, 1f);
-            var otherMassDR = MathF.Pow(ourMass / otherMass, _massBias); // Change-Forge: var otherMassDR = MathF.Max(ourMass / otherMass, 1f);
+            var ourMassDR = MathF.Max(otherMass / ourMass, 1f);
+            var otherMassDR = MathF.Max(ourMass / otherMass, 1f);
             // multiplier to make large grids not just bonk against each other
             var inertiaMult = MathF.Pow(effectiveInertiaMult / _baseShuttleMass, _inertiaScaling);
-            var toUsEnergy = otherMass * energyMult * inertiaMult / ourMassDR; // Change-Forge: var toUsEnergy = otherMass * energyMult * inertiaMult * ourMassDR;
-            var toOtherEnergy = ourMass * energyMult * inertiaMult / otherMassDR; // Change-Forge: var toOtherEnergy = ourMass * energyMult * inertiaMult * otherMassDR;
+            var toUsEnergy = otherMass * energyMult * inertiaMult * ourMassDR;
+            var toOtherEnergy = ourMass * energyMult * inertiaMult * otherMassDR;
 
             var impact = LogImpact.High;
             // if impact isn't tiny, log it as extreme
@@ -227,50 +217,68 @@ public sealed partial class ShuttleSystem
 
         // throw every entity on grid if the impulse is not negligible
         if (deltaV.Length() > _minImpulseVelocity)
-            ThrowEntitiesOnGrid(ent, xform, -deltaV, energy);
+            ThrowEntitiesOnGrid(ent, xform, -deltaV);
     }
 
     /// <summary>
     /// Knocks and throws all unbuckled entities on the specified grid.
     /// </summary>
-    private void ThrowEntitiesOnGrid(EntityUid gridUid, TransformComponent xform, Vector2 direction, float energy)
+    private void ThrowEntitiesOnGrid(EntityUid gridUid, TransformComponent xform, Vector2 direction)
     {
         var movedByPressureQuery = GetEntityQuery<MovedByPressureComponent>();
-        var stunTime = TimeSpan.FromSeconds(Math.Min(10, energy * 0.25f)); //Forge-Change
+        var knockdownTime = TimeSpan.FromSeconds(5);
 
         var minsq = _minThrowVelocity * _minThrowVelocity;
-        // iterate all entities on the grid
-        // TODO: only iterate non-static entities
-        var childEnumerator = xform.ChildEnumerator;
-        while (childEnumerator.MoveNext(out var uid))
-        {
-            // don't throw static bodies
-            if (!_physicsQuery.TryGetComponent(uid, out var physics) || (physics.BodyType & BodyType.Static) != 0)
-                continue;
 
+        // iterate all dynamic entities on the grid
+        if (!TryComp<BroadphaseComponent>(gridUid, out var lookup) || !_gridQuery.TryComp(gridUid, out var gridComp))
+            return;
+
+        var gridBox = gridComp.LocalAABB;
+        List<Entity<PhysicsComponent>> list = new();
+        HashSet<EntityUid> processed = new();
+        var state = (list, processed, _physicsQuery);
+        lookup.DynamicTree.QueryAabb(ref state, GridQueryCallback, gridBox, true);
+        lookup.SundriesTree.QueryAabb(ref state, GridQueryCallback, gridBox, true);
+
+        foreach (var ent in list)
+        {
             // don't throw if buckled
-            if (_buckle.IsBuckled(uid, _buckleQuery.CompOrNull(uid)))
+            if (_buckle.IsBuckled(ent, _buckleQuery.CompOrNull(ent)))
                 continue;
 
             // don't throw them if they have magboots
-            if (movedByPressureQuery.TryComp(uid, out var moved) && !moved.Enabled)
+            if (movedByPressureQuery.TryComp(ent, out var moved) && !moved.Enabled)
                 continue;
-
-            if (stunTime.TotalSeconds > 1.0f) //Forge-Change
-                _stuns.TryKnockdown(uid, stunTime, true); //Forge-Change
 
             if (direction.LengthSquared() > minsq)
             {
-                if (stunTime.TotalSeconds > 1.0f) //Forge-Change
-                    _stuns.TryKnockdown(uid, stunTime, true); //Forge-Change
-
-                _throwing.TryThrow(uid, direction, physics, Transform(uid), _projQuery, direction.Length(), playSound: false);
+                _stuns.TryCrawling(ent.Owner, knockdownTime);
+                _throwing.TryThrow(ent, direction, ent.Comp, Transform(ent), _projQuery, direction.Length(), playSound: false);
             }
             else
             {
-                _physics.ApplyLinearImpulse(uid, direction * physics.Mass, body: physics);
+                _physics.ApplyLinearImpulse(ent, direction * ent.Comp.Mass, body: ent.Comp);
             }
         }
+    }
+
+    private static bool GridQueryCallback(
+        ref (List<Entity<PhysicsComponent>> List, HashSet<EntityUid> Processed, EntityQuery<PhysicsComponent> PhysicsQuery) state,
+        in EntityUid uid)
+    {
+        if (state.Processed.Add(uid) && state.PhysicsQuery.TryComp(uid, out var body))
+            state.List.Add((uid, body));
+
+        return true;
+    }
+
+    private static bool GridQueryCallback(
+        ref (List<Entity<PhysicsComponent>> List, HashSet<EntityUid> Processed, EntityQuery<PhysicsComponent> PhysicsQuery) state,
+        in FixtureProxy proxy)
+    {
+        var owner = proxy.Entity;
+        return GridQueryCallback(ref state, in owner);
     }
 
     /// <summary>
@@ -382,10 +390,9 @@ public sealed partial class ShuttleSystem
                 if (_dmgQuery.TryComp(localEnt, out var damageable))
                 {
                     // Apply damage scaled by distance but capped to prevent gibbing
-                    var scaledDamage = tileData.Energy * _damageMultiplier * 2; // Forge-Change: *2 < 0
+                    var scaledDamage = tileData.Energy * _damageMultiplier;
                     damageSpec.DamageDict["Blunt"] = scaledDamage;
-                    damageSpec.DamageDict["Structural"] = scaledDamage * _structuralDamage * 4; // Forge-Change: *4 < 0
-
+                    damageSpec.DamageDict["Structural"] = scaledDamage * _structuralDamage;
 
                     _damageSys.TryChangeDamage(localEnt, damageSpec, damageable: damageable);
                 }
@@ -419,19 +426,7 @@ public sealed partial class ShuttleSystem
             // Mark tiles for breaking/effects
             var def = _turf.GetContentTileDefinition(_mapSystem.GetTileRef(uid, grid, tileData.Tile));
             if (tileData.Energy > def.Mass * _tileBreakEnergyMultiplier)
-            {
                 brokenTiles.Add((tileData.Tile, Tile.Empty));
-
-                // Detonate explosives on broken tiles
-                foreach (var localEnt in entitiesOnTile)
-                {
-                    if (TerminatingOrDeleted(localEnt) || EntityManager.IsQueuedForDeletion(localEnt))
-                        continue;
-
-                    if (TryComp<ExplosiveComponent>(localEnt, out var explosive))
-                        _explosion.TriggerExplosive(localEnt, explosive);
-                }
-            }
 
         }
     }

@@ -18,7 +18,7 @@
   price: 272000 #Appraisal value is 150000
   category: Large
   group: Security
-  access: Bailiff
+  access: Frontier
   shuttlePath: /Maps/_Forge/Shuttles/Nfsd/ravager.yml
   guidebookPage: Null
   class:

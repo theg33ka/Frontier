@@ -258,8 +258,8 @@
   suffix: Роль УСФ, Эскадрон
   components:
     - type: Sprite
-      sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
-      state: icon
+      sprite: Forge/Markers/jobs.rsi
+      state: dsquad
     - type: RandomMetadata
       nameSegments:
         - NamesMilitaryFirstLeader
@@ -364,7 +364,7 @@
   suffix: Роль УСФ, EVA
   components:
     - type: Sprite
-      sprite: Markers/jobs.rsi
+      sprite: Forge/Markers/jobs.rsi
       state: ertleadereva
     - type: RandomHumanoidSpawner
       settings: ForgeERTLeaderEVA
@@ -433,7 +433,7 @@
   suffix: Роль УСФ, EVA
   components:
     - type: Sprite
-      sprite: Markers/jobs.rsi
+      sprite: Forge/Markers/jobs.rsi
       state: ertjanitoreva
     - type: RandomHumanoidSpawner
       settings: ForgeERTJanitorEVA
@@ -501,7 +501,7 @@
   suffix: Роль УСФ, EVA
   components:
     - type: Sprite
-      sprite: Markers/jobs.rsi
+      sprite: Forge/Markers/jobs.rsi
       state: ertengineereva
     - type: RandomHumanoidSpawner
       settings: ForgeERTEngineerEVA
@@ -571,7 +571,7 @@
   suffix: Роль УСФ, EVA
   components:
     - type: Sprite
-      sprite: Markers/jobs.rsi
+      sprite: Forge/Markers/jobs.rsi
       state: ertsecurityeva
     - type: RandomHumanoidSpawner
       settings: ForgeERTSecurityEVA
@@ -636,7 +636,7 @@
   suffix: Роль УСФ, EVA
   components:
     - type: Sprite
-      sprite: Markers/jobs.rsi
+      sprite: Forge/Markers/jobs.rsi
       state: ertmedicaleva
     - type: RandomHumanoidSpawner
       settings: ForgeERTMedicalEVA
@@ -709,7 +709,7 @@
   suffix: Роль УСФ
   components:
     - type: Sprite
-      sprite: Markers/jobs.rsi
+      sprite: Forge/Markers/jobs.rsi
       state: cburn
     - type: RandomHumanoidSpawner
       settings: ForgeCBURNAgent
@@ -782,7 +782,8 @@
   suffix: Роль УСФ
   components:
     - type: Sprite
-      sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/navy_gold.rsi
+      sprite: Forge/Markers/jobs.rsi
+      state: msfofficer
     - type: RandomHumanoidSpawner
       settings: ForgeMSFNavyOffic
 
@@ -846,13 +847,14 @@
     outerClothing: ClothingOuterArmorMKVIVestWeb
     id: MSFAdmiralPDA
     ears: ClothingHeadsetCentCom
-    pocket1: RubberStampMSFAdmiral
+    pocket1: CentCommFlippo
     pocket2: CentCommHypoNanites
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltOfficerSheathFilled
     wallet: ClothingWalletLeatherBlack
   inhand:
    - MindShieldImplanter
+   - RubberStampMSFAdmiral
 
 - type: startingGear
   id: MSFNavyRepGear

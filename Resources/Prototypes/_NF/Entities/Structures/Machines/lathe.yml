@@ -108,6 +108,7 @@
     runningState: icon
     staticPacks:
     - NFEngineeringTechfabDeprecatedStatic
+    - NFInflatablesStatic
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -141,6 +142,7 @@
     runningState: icon
     staticPacks:
     - NFSalvageTechfabDeprecatedStatic
+    - NFInflatablesStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFSalvageTechfabDeprecatedEmag
@@ -181,6 +183,10 @@
     - NfsdAmmoStatic
     - ReportingStatic # DeltaV
     - CorvaxAmmoStatic #Corvax-Frontier
+    - NfsdToolsStatic
+    - NfsdTargetsStatic
+    - NfsdBoardsStatic
+    - NfsdReportingStatic
     dynamicPacks:
     - CorvaxShuttleGunsDynamic #Corvax-Frontier
     - CorvaxAmmoDynamic #Corvax-Frontier

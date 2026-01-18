@@ -1546,7 +1546,7 @@
   productEntity: WeaponCaseLongWeaponRifleAnarchist
   icon: { sprite: Forge/Objects/Weapons/Guns/Rifles/anarchist.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 20
+    FrontierUplinkCoin: 30
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -1566,7 +1566,7 @@
   productEntity: WeaponCaseLongWeaponRifleCascade
   icon: { sprite: Forge/Objects/Weapons/Guns/Rifles/cascade_64.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 16
+    FrontierUplinkCoin: 37
   categories:
     - UplinkSecurityWeapons
   conditions:

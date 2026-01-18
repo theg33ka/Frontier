@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.1.0
   forkId: ""
   forkVersion: ""
-  time: 12/19/2025 19:45:58
-  entityCount: 745
+  time: 01/17/2026 12:06:23
+  entityCount: 744
 maps: []
 grids:
 - 1
@@ -634,18 +634,20 @@ entities:
             1: 62583
           -1,1:
             1: 50380
-            0: 4353
+            0: 257
+            2: 4096
           0,2:
             1: 46079
           -1,2:
             1: 52428
-            0: 4369
+            2: 17
+            0: 4352
           0,3:
-            1: 48121
+            1: 48123
           -1,3:
-            1: 65009
+            1: 65021
           0,4:
-            1: 48115
+            1: 48113
           1,0:
             0: 4368
           1,1:
@@ -660,17 +662,19 @@ entities:
             0: 16388
             1: 4368
           -2,2:
-            0: 52360
+            0: 52232
+            2: 128
           -2,3:
             1: 51392
           -2,4:
             0: 16388
           -2,1:
-            0: 34944
-          -1,4:
-            1: 49080
+            0: 2176
+            2: 32768
           -2,5:
             0: 1024
+          -1,4:
+            1: 49072
           -1,5:
             1: 49080
           -2,6:
@@ -715,6 +719,21 @@ entities:
           moles:
           - 21.824879
           - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -2366,14 +2385,6 @@ entities:
     components:
     - type: Transform
       pos: -1.5,28.5
-      parent: 1
-- proto: ComputerTabletopStationRecords
-  entities:
-  - uid: 297
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,21.5
       parent: 1
 - proto: CrateEmptySpawner
   entities:
@@ -4677,19 +4688,19 @@ entities:
     - type: Transform
       pos: 0.5,5.5
       parent: 1
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 297
+    components:
+    - type: Transform
+      pos: -0.5,21.5
+      parent: 1
 - proto: SpawnPointNFPirate
   entities:
   - uid: 598
     components:
     - type: Transform
       pos: -3.5,17.5
-      parent: 1
-- proto: SpawnPointNFPirateCaptain
-  entities:
-  - uid: 599
-    components:
-    - type: Transform
-      pos: -2.5,21.5
       parent: 1
 - proto: SpawnPointNFPirateFirstMate
   entities:

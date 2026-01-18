@@ -86,7 +86,7 @@
         map: [ "base" ]
         # color: "#bfe3ff" # Forge-Change: Fax-color-fix
   - type: FaxMachine
-    name: "Штаб УСФ" # Forge-Lore-Change: CentCom -> MSF
+    name: "Штаб УСФ" # Forge-Change: CentCom -> MSF
     notifyAdmins: true
 
 - type: entity

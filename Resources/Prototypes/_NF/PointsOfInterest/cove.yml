@@ -46,8 +46,8 @@
         - type: StationJobs
           availableJobs:
             NFPirateCaptain: [ 1, 1 ]
-            NFPirateFirstMate: [ 0, 0] #Forge-Change
-            NFPirate: [ 0, 0 ]
+            # NFPirateFirstMate: [ 0, 0] #Forge-Change
+            # NFPirate: [ 0, 0 ] #Forge-Change
         - type: StationDeadDropReporting
           messageSet: Pirate
         - type: StationDeadDropHintExempt

@@ -26,12 +26,14 @@ public sealed partial class GunSystem
 
         _damageExamine.AddDamageExamine(args.Message, Damageable.ApplyUniversalAllModifiers(damageSpec), Loc.GetString("damage-projectile"));
 
+        // Forge-Change-Start
         var ap = GetProjectilePenetration(component.Prototype);
         if (ap == 0)
             return;
 
         var abs = Math.Abs(ap);
         args.Message.AddMarkupPermissive("\n" + Loc.GetString("armor-penetration", ("arg", ap/abs), ("abs", abs)));
+        // Forge-Change-End
     }
 
     private DamageSpecifier? GetProjectileDamage(string proto)
@@ -65,7 +67,7 @@ public sealed partial class GunSystem
         }
     }
 
-    // Forge start - partial armor penetration
+    // Forge-Change-Start
     private void OnBasicEntityDamageExamine(EntityUid uid, BasicEntityAmmoProviderComponent component, ref DamageExamineEvent args)
     {
         if (component.Proto == null)
@@ -96,5 +98,5 @@ public sealed partial class GunSystem
 
         return p.IgnoreResistances ? 100 : (int)Math.Round(p.Damage.ArmorPenetration * 100);
     }
-    // Forge end
+    // Forge-Change-End
 }

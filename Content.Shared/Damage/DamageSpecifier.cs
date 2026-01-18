@@ -39,8 +39,7 @@ namespace Content.Shared.Damage
         [IncludeDataField(customTypeSerializer: typeof(DamageSpecifierDictionarySerializer), readOnly: true)]
         public Dictionary<string, FixedPoint2> DamageDict { get; set; } = new();
 
-        // Forge
-        [DataField]
+        [DataField] // Forge-Change
         public float ArmorPenetration { get; set; }
 
         /// <summary>
@@ -93,8 +92,7 @@ namespace Content.Shared.Damage
         /// </summary>
         public DamageSpecifier() { }
 
-        // Forge
-        public DamageSpecifier(float armorPenetration)
+        public DamageSpecifier(float armorPenetration) // Forge-Change
         {
             ArmorPenetration = armorPenetration;
         }
@@ -105,7 +103,7 @@ namespace Content.Shared.Damage
         public DamageSpecifier(DamageSpecifier damageSpec)
         {
             DamageDict = new(damageSpec.DamageDict);
-            ArmorPenetration = damageSpec.ArmorPenetration; // Forge
+            ArmorPenetration = damageSpec.ArmorPenetration; // Forge-Change
         }
 
         /// <summary>
@@ -357,7 +355,7 @@ namespace Content.Shared.Damage
             }
         }
 
-        // Forge - partial AP. Returns new armor modifier set.
+        // Forge-Change-Start: +partial AP. Returns new armor modifier set.
         public static DamageModifierSet PenetrateArmor(DamageModifierSet modifierSet, float penetration)
         {
             if (penetration == 0f ||
@@ -398,11 +396,12 @@ namespace Content.Shared.Damage
 
             return result;
         }
+        // Forge-Change-End
 
         #region Operators
         public static DamageSpecifier operator *(DamageSpecifier damageSpec, FixedPoint2 factor)
         {
-            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration);
+            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration); // Forge-Change: +new(damageSpec.ArmorPenetration)
             foreach (var entry in damageSpec.DamageDict)
             {
                 newDamage.DamageDict.Add(entry.Key, entry.Value * factor);
@@ -412,7 +411,7 @@ namespace Content.Shared.Damage
 
         public static DamageSpecifier operator *(DamageSpecifier damageSpec, float factor)
         {
-            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration);
+            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration); // Forge-Change: +new(damageSpec.ArmorPenetration)
             foreach (var entry in damageSpec.DamageDict)
             {
                 newDamage.DamageDict.Add(entry.Key, entry.Value * factor);
@@ -422,7 +421,7 @@ namespace Content.Shared.Damage
 
         public static DamageSpecifier operator /(DamageSpecifier damageSpec, FixedPoint2 factor)
         {
-            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration);
+            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration); // Forge-Change: +new(damageSpec.ArmorPenetration)
             foreach (var entry in damageSpec.DamageDict)
             {
                 newDamage.DamageDict.Add(entry.Key, entry.Value / factor);
@@ -432,7 +431,7 @@ namespace Content.Shared.Damage
 
         public static DamageSpecifier operator /(DamageSpecifier damageSpec, float factor)
         {
-            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration);
+            DamageSpecifier newDamage = new(damageSpec.ArmorPenetration); // Forge-Change: +new(damageSpec.ArmorPenetration)
 
             foreach (var entry in damageSpec.DamageDict)
             {

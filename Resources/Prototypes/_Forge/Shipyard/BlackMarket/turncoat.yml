@@ -42,4 +42,5 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            NFPirate: [ 0, 0 ]
+            NFPirate: [ 3, 3 ]
+            NFPirateFirstMate: [ 1, 1 ]

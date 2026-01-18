@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.1.0
   forkId: ""
   forkVersion: ""
-  time: 12/19/2025 19:40:04
-  entityCount: 560
+  time: 01/17/2026 11:57:31
+  entityCount: 563
 maps: []
 grids:
 - 3
@@ -3147,6 +3147,20 @@ entities:
     - type: Transform
       pos: -0.5,-7.5
       parent: 3
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 541
+    components:
+    - type: Transform
+      pos: 0.5,-2.5
+      parent: 3
+- proto: SpawnPointNFPirate
+  entities:
+  - uid: 539
+    components:
+    - type: Transform
+      pos: 4.5,-7.5
+      parent: 3
 - proto: SpawnPointNFPirateCaptain
   entities:
   - uid: 538
@@ -3160,6 +3174,11 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-6.5
+      parent: 3
+  - uid: 540
+    components:
+    - type: Transform
+      pos: 4.5,-6.5
       parent: 3
 - proto: StoolBar
   entities:

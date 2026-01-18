@@ -25,13 +25,13 @@ public abstract class SharedArmorSystem : EntitySystem
         SubscribeLocalEvent<ArmorComponent, GetVerbsEvent<ExamineVerb>>(OnArmorVerbExamine);
     }
 
-    // Forge edit start
+    // Forge-Change-Start
     private void OnDamageModify(EntityUid uid, ArmorComponent component, DamageModifyEvent args)
     {
         args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage,
-            DamageSpecifier.PenetrateArmor(component.Modifiers, args.Damage.ArmorPenetration));
+            DamageSpecifier.PenetrateArmor(component.Modifiers, args.Damage.ArmorPenetration)); // Forge-Change: +args.Damage.ArmorPenetration
     }
-    // Forge edit-end
+    // Forge-Change-End
 
     /// <summary>
     /// Get the total Damage reduction value of all equipment caught by the relay.
@@ -46,17 +46,17 @@ public abstract class SharedArmorSystem : EntitySystem
         }
     }
 
-    private void OnRelayDamageModify(EntityUid uid, ArmorComponent component, InventoryRelayedEvent<DamageModifyEvent> args) // Forge edit
+    private void OnRelayDamageModify(EntityUid uid, ArmorComponent component, InventoryRelayedEvent<DamageModifyEvent> args)
     {
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage,
-            DamageSpecifier.PenetrateArmor(component.Modifiers, args.Args.Damage.ArmorPenetration));
+            DamageSpecifier.PenetrateArmor(component.Modifiers, args.Args.Damage.ArmorPenetration)); // Forge-Change: +args.Args.Damage.ArmorPenetration
     }
 
     private void OnBorgDamageModify(EntityUid uid, ArmorComponent component,
         ref BorgModuleRelayedEvent<DamageModifyEvent> args)
     {
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage,
-            DamageSpecifier.PenetrateArmor(component.Modifiers, args.Args.Damage.ArmorPenetration)); // Forge edit
+            DamageSpecifier.PenetrateArmor(component.Modifiers, args.Args.Damage.ArmorPenetration)); // Forge-Change: +args.Args.Damage.ArmorPenetration
     }
 
     private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)
