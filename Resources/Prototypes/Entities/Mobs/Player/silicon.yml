@@ -9,22 +9,32 @@
     channels:
     - Binary
     - Common
+    - Traffic # Forge-change
+    - Greeting # Forge-change
     - Command
     - Engineering
     - Medical
+    - Hospital # Forge-change
     - Science
     - Security
+    - Nfsd # Forge-change
+    - MercenaryFM # Forge-change
     - Service
     - Supply
   - type: ActiveRadio
     channels:
     - Binary
     - Common
+    - Traffic # Forge-change
+    - Greeting # Forge-change
     - Command
     - Engineering
     - Medical
+    - Hospital # Forge-change
     - Science
     - Security
+    - Nfsd # Forge-change
+    - MercenaryFM # Forge-change
     - Service
     - Supply
   - type: IgnoreUIRange
@@ -190,6 +200,7 @@
         acts: [ "Destruction" ]
   - type: ApcPowerReceiver
     powerLoad: 1000
+    needsPower: false
   - type: StationAiCore
   - type: StationAiVision
   - type: InteractionOutline
@@ -218,7 +229,6 @@
     listeningRange: 0
     speakerVolume: Speak
     unlistedNumber: true
-    requiresPower: false
   - type: Holopad
   - type: StationAiWhitelist
   - type: UserInterface
@@ -280,6 +290,7 @@
     - HideContextMenu
     - StationAi
     - NoConsoleSound
+    - CanPilot # Forge-change
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true

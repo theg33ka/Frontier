@@ -36,6 +36,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmos
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Engineering Hardsuit
 - type: entity
@@ -68,6 +73,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineering
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Spationaut Hardsuit
 - type: entity
@@ -113,6 +123,7 @@
     - Hardsuit
     - WhitelistChameleon
     - HardsuitSpatio
+    - CorgiWearable
 
 #Salvage Hardsuit
 - type: entity
@@ -128,31 +139,34 @@
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
-  - type: FireProtection # Corvax-Forge: Armor rebalance
-    reduction: 0.4
-  - type: ExplosionResistance # Corvax-Forge: Armor rebalance
+  - type: FireProtection # Forge-change: Armor rebalance
+    reduction: 0.3
+  - type: ExplosionResistance # Forge-change: Armor rebalance
     damageCoefficient: 0.7
-  - type: StaminaResistance # Corvax-Forge: Armor rebalance
-    damageCoefficient: 0.75
-  - type: ZombificationResistance # Corvax-Forge: Armor rebalance
-    zombificationResistanceCoefficient: 0.6
+  - type: ZombificationResistance # Forge-change: Armor rebalance
+    zombificationResistanceCoefficient: 0.75
   - type: Armor
     modifiers:
-      coefficients: # Corvax-Forge: Armor rebalance
-        Blunt: 0.7
-        Slash: 0.6
-        Piercing: 0.65
-        Heat: 0.7
-        Cold: 0.7
-        Radiation: 0.3
-        Shock: 0.8
-        Caustic: 0.7
-  - type: ClothingSpeedModifier # Corvax-Forge: Armor rebalance
-    walkModifier: 0.85
-    sprintModifier: 0.85
+      coefficients: # Forge-change: Armor rebalance
+        Blunt: 0.6
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.75
+        Cold: 0.75
+        Radiation: 0.4
+        Shock: 0.85
+        Caustic: 0.8
+  - type: ClothingSpeedModifier # Forge-change: Armor rebalance
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Goliath Hardsuit
 - type: entity
@@ -188,6 +202,11 @@
   - type: Construction
     graph: HardsuitGoliath
     node: hardsuitGoliath
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Maxim Hardsuit
 - type: entity
@@ -270,6 +289,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Brigmedic Hardsuit
 - type: entity
@@ -390,6 +414,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCap
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -419,11 +448,16 @@
         Radiation: 0.0
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
+    walkModifier: 0.8
     sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -442,15 +476,25 @@
   - type: Armor
     modifiers:
       coefficients:
-        Caustic: 0.1
+        Blunt: 0.9 #CorvaxFrontier
+        Slash: 0.9 #CorvaxFrontier
+        Piercing: 0.9 #CorvaxFrontier
+        Heat: 0.9 #CorvaxFrontier
+        Radiation: 0.85 #CorvaxFrontier
+        Caustic: 0.85 #CorvaxFrontier
   - type: ZombificationResistance
-    zombificationResistanceCoefficient: 0.4
+    zombificationResistanceCoefficient: 0
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
+    walkModifier: 0.95
     sprintModifier: 0.95
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMedical
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Research Director's Hardsuit
 - type: entity
@@ -489,6 +533,8 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
+    - CorgiWearable
+    - Hardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitRd
   - type: StaticPrice
@@ -562,18 +608,18 @@
     zombificationResistanceCoefficient: 0.5
   - type: Armor
     modifiers:
-      coefficients: # Corvax-Forge: Armor rebalance
-        Blunt: 0.65
-        Slash: 0.6
-        Piercing: 0.65
-        Heat: 0.65
-        Cold: 0.65
-        Radiation: 0.1
-        Shock: 0.75
+      coefficients: # Forge-change: Armor rebalance
+        Blunt: 0.55
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.7
+        Cold: 0.7
+        Radiation: 0.2
+        Shock: 0.8
         Caustic: 0.7
-  - type: ClothingSpeedModifier # Corvax-Forge: Armor rebalance
-    walkModifier: 0.9
-    sprintModifier: 0.9
+  - type: ClothingSpeedModifier # Forge-change: Armor rebalance
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitLuxury
@@ -625,6 +671,10 @@
     - MonkeyWearable
     - Hardsuit
     - WhitelistChameleon
+    - CorgiWearable
+    - ScurretWearable
+  - type: StaticPrice
+    price: 5000
 
 # Syndicate Medic Hardsuit
 - type: entity
@@ -688,6 +738,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -729,6 +784,11 @@
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -750,6 +810,8 @@
   - type: Tag
     tags:
     - MonkeyWearable
+    - CorgiWearable
+    - Hardsuit
     - WhitelistChameleon
   - type: FireProtection # Corvax-Forge: Armor rebalance
     reduction: 0.8
@@ -805,6 +867,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWizard
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Ling Space Suit
 - type: entity
@@ -890,15 +957,16 @@
     damageCoefficient: 0.5
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.7
-        Piercing: 0.75
-        Heat: 0.4
+      coefficients: # Forge-change: small rebalance-pirate buff
+        Blunt: 0.7
+        Slash: 0.55
+        Piercing: 0.5
+        Heat: 0.8
+        Radiation: 0.6
         Caustic: 0.75
-  - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+  - type: ClothingSpeedModifier # Forge-change: small rebalance-pirate buff
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitPirateCap

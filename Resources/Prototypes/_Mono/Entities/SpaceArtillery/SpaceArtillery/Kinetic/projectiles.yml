@@ -33,8 +33,9 @@
   - type: ShipWeaponProjectile
   - type: RadarBlip
     radarColor: "#c51515"
-    scale: 3
+    scale: 1.8
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
   - type: TimedDespawn
     lifetime: 2.2
@@ -77,9 +78,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 300
-        Blunt: 75
-        Piercing: 100
+        Structural: 160
+        Blunt: 14
+        Piercing: 28
     ignoreWeaponGrid: true
   - type: ShipWeaponProjectile
   - type: TimedDespawn
@@ -90,6 +91,7 @@
   - type: RadarBlip
     scale: 0.85
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
     radarColor: "#1df1f5"
 
@@ -102,8 +104,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 12
-        Piercing: 18
+        Structural: 160
+        Piercing: 28
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
     layers:
@@ -120,8 +122,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 240
-        Piercing: 100
+        Structural: 140
+        Piercing: 26
 
 # 30mm
 
@@ -133,9 +135,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 350
-        Blunt: 100
-        Piercing: 125
+        Structural: 180
+        Blunt: 40
+        Piercing: 70
   - type: ShipWeaponProjectile
   - type: TimedDespawn
     lifetime: 3
@@ -145,6 +147,7 @@
   - type: RadarBlip
     scale: 1.15
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: arrow
     radarColor: "#1df1f5"
 
@@ -156,9 +159,9 @@
   - type: Projectile
     damage:
       types:
-        Structural: 280
-        Blunt: 80
-        Piercing: 100
+        Structural: 155
+        Blunt: 35
+        Piercing: 65
 
 # 57mm Dravon
 
@@ -171,7 +174,7 @@
   - type: Projectile
     damage:
       types:
-        Structural: 820
+        Structural: 280 # expl + structural? no no no
         Blunt: 120
         Piercing: 210
   - type: Sprite
@@ -183,6 +186,7 @@
   - type: RadarBlip
     scale: 2.5
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
     radarColor: "#1df1f5"
   - type: TimedDespawn
@@ -206,7 +210,7 @@
   - type: Projectile
     damage:
       types:
-        Structural: 656
+        Structural: 256
         Blunt: 96
         Piercing: 168
   - type: Explosive
@@ -233,6 +237,7 @@
   - type: RadarBlip
     scale: 1.5
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
     radarColor: "#1df1f5"
 
@@ -246,7 +251,7 @@
   - type: Projectile
     damage:
       types:
-        Structural: 1800
+        Structural: 900
         Blunt: 100
         Piercing: 250
   - type: Sprite
@@ -269,8 +274,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 1440
-        Blunt: 80
+        Structural: 740 # expl + structural? no no no
+        Blunt: 130
         Piercing: 200
   - type: Explosive
     totalIntensity: 20
@@ -299,7 +304,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2700
+        Piercing: 525
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -308,8 +313,9 @@
   - type: Ammo
   - type: ShipWeaponProjectile
   - type: RadarBlip
-    scale: 3.25
+    scale: 1.95
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: arrow
     radarColor: "#f7dc0c"
   - type: TimedDespawn
@@ -335,7 +341,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2160
+        Piercing: 460
   - type: Explosive
     totalIntensity: 320
     intensitySlope: 15
@@ -352,8 +358,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 6500
-        Blunt: 10000
+        Structural: 4200
+        Blunt: 7000
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -365,6 +371,7 @@
   - type: RadarBlip
     scale: 3.25
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
   - type: TimedDespawn
     lifetime: 5.15
@@ -389,8 +396,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 5200
-        Blunt: 8000
+        Structural: 4100
+        Blunt: 7500
   - type: Explosive
     totalIntensity: 1040
     intensitySlope: 15
@@ -407,8 +414,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 8500
-        Blunt: 12000
+        Structural: 4500
+        Blunt: 6000
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
     layers:
@@ -420,6 +427,7 @@
   - type: RadarBlip
     scale: 2.5
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
   - type: TimedDespawn
     lifetime: 5.5
@@ -475,6 +483,7 @@
   - type: RadarBlip
     scale: 2.5
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
   - type: TimedDespawn
     lifetime: 5.15
@@ -529,8 +538,9 @@
     muzzleFlash: null
   - type: ShipWeaponProjectile
   - type: RadarBlip
-    scale: 4.25
+    scale: 3.25
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
   - type: TimedDespawn
     lifetime: 10
@@ -625,8 +635,9 @@
     muzzleFlash: null
   - type: ShipWeaponProjectile
   - type: RadarBlip
-    scale: 3.25
+    scale: 2.25
     requireNoGrid: true
+    visibleFromOtherGrids: true
     shape: triangle
   - type: TimedDespawn
     lifetime: 6
@@ -641,3 +652,40 @@
   - type: GatheringProjectile
   - type: MiningGatheringSoft
   - type: MiningGatheringHard
+
+# Drone
+
+- type: entity
+  id: ShipShardProjectile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Structural: 300
+        Blunt: 50
+        Piercing: 50
+  - type: Sprite
+    sprite: _Mono/Objects/SpaceArtillery/57_shell.rsi
+    layers:
+    - state: 57-shell
+    scale: 1, 1
+  - type: ShipWeaponProjectile
+  - type: RadarBlip
+    scale: 1.9
+    requireNoGrid: true
+    visibleFromOtherGrids: true
+    shape: triangle
+    radarColor: "#ffffff"
+  - type: TimedDespawn
+    lifetime: 5
+  - type: PointLight
+    color: "#ffffff"
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 12
+    intensitySlope: 2
+    maxIntensity: 2
+    maxTileBreak: 1

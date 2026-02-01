@@ -12,14 +12,17 @@
   id: Edison
   parent: BasePOI
   name: 'Электростанция Эдисона'
-  minimumDistance: 3650
-  maximumDistance: 5400
+  minimumDistance: 3550
+  maximumDistance: 4800 # Forge-change
   minimumClearance: 1000
   spawnGroup: Required
   gridPath: /Maps/_Forge/POI/edison.yml #Forge-Change
   addComponents:
   - type: IFF
     color: "#3737F8"
+  - type: StationTransit
+    routes:
+      SpawnPoints: 60
   - type: SolarPoweredGrid
     trackOnInit: true
     doNotCull: true
@@ -38,7 +41,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'Edison Power Plant'
         - type: ExtraStationInformation
-          iconPath: /Textures/_NF/Structures/Decoration/banner.rsi/banner_engineering.png
+          iconPath: /Textures/Forge/Logo/Icon/banner_engineering.png #Forge-Change
           stationSubtext: frontier-lobby-edison-subtext
           stationDescription: frontier-lobby-edison-description
           lobbySortOrder: 5

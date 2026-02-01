@@ -12,7 +12,7 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Item
-    size: Huge
+    size: Large #FrontierCorvax-Size-Fix
   - type: Clothing
     sprite: Forge/Objects/Weapons/Guns/SMGs/vector22.rsi
     quickEquip: false
@@ -118,4 +118,4 @@
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
-    price: 1000
+    price: 1320

@@ -11,6 +11,9 @@
     - 0,0,1,3
     - 3,0,6,3
     - 8,0,9,3
+  - type: StaticPrice # Forge-change add
+    price: 150
+    vendPrice: 260
 
 - type: entity
   parent: ClothingBackpackSatchel
@@ -196,3 +199,13 @@
         shader: unshaded # Frontier
   - type: ExplosionResistance # Corvax-Forge
     damageCoefficient: 0.5
+
+- type: entity
+  parent: ClothingBackpackSatchelHolding
+  id: ClothingBackpackSatchelAdmin
+  name: satchel of administration
+  suffix: Admin
+  description: If you are somehow seeing this, no you're not.
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0

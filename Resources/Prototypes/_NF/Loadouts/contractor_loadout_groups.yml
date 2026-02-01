@@ -635,7 +635,7 @@
   - ContractorClothingNeckTieRed
   - ContractorClothingNeckTieSci
   - ContractorClothingNeckLawyerbadge
-  - ContractorClothingNeckHeadphones
+  - ContractorClothingMultipleHeadphones
   - ContractorClothingNeckCrucifix
   - ContractorClothingNeckBellCollar
   - ContractorCDDogtags
@@ -859,6 +859,7 @@
   - ContractorHypoMini
   - ContractorBible
   - Contractorrepairkit #Corvax-Frontier
+  - ContractorBodycam
 
 - type: loadoutGroup
   id: ContractorFace
